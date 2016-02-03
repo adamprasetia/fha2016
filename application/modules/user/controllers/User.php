@@ -11,8 +11,8 @@ class User extends MY_Controller {
 		$limit 	= $this->general->get_limit();
 		$total 	= $this->user_model->count_all();
 
-		$xdata['action'] 				= 'user/search'.get_query_string();
-		$xdata['action_delete'] = 'user/delete'.get_query_string();
+		$xdata['action'] 			= 'user/search'.get_query_string();
+		$xdata['action_delete'] 	= 'user/delete'.get_query_string();
 		$xdata['add_btn'] 			= anchor('user/add','<span class="glyphicon glyphicon-plus"></span> Tambah',array('class'=>'btn btn-success btn-sm'));
 		$xdata['delete_btn'] 		= '<button id="delete-btn" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete Checked</button>';
 
