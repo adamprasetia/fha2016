@@ -15,11 +15,12 @@ class Telemarketing extends MY_Controller {
 
 		$this->table->set_template(tbl_tmp());
 		$head_data = array(
-			'sn'		=> 'Serial Number',
-			'name'		=> 'Name of Contact',
-			'title'		=> 'Job Title',
-			'company'	=> 'Company Name',
-			'tlp'		=> 'Phone'
+			'sn'			=> 'Serial Number',
+			'name'			=> 'Name of Contact',
+			'title'			=> 'Job Title',
+			'company'		=> 'Company Name',
+			'tlp'			=> 'Phone',
+			'status_name'	=> 'Status'
 		);
 		$heading[] = '#';
 		foreach($head_data as $r => $value){
@@ -30,14 +31,16 @@ class Telemarketing extends MY_Controller {
 		$result = $this->telemarketing_model->get()->result();
 		$i=1+$offset;
 		foreach($result as $r){
+			$count_call = $this->telemarketing_model->count_call($r->id);
 			$this->table->add_row(
 				$i++,
-				$r->sn,
+				$r->sn.($r->audit==1?' <span class="label label-primary">Audit</span>':''),
 				$r->name,
 				$r->title,
 				$r->company,
 				$r->tlp,			
-				anchor('telemarketing/phone/'.$r->id.get_query_string(),'Phone')
+				$r->status_name,			
+				anchor('telemarketing/phone/'.$r->id.get_query_string(),'Phone'.($count_call > 0?' <span class="label label-success">'.$count_call.' <span class="glyphicon glyphicon-earphone"></span></span>':''))
 			);
 		}
 		$xdata['table'] = $this->table->generate();
@@ -58,14 +61,19 @@ class Telemarketing extends MY_Controller {
 		$data = array(
 			'search'=>$this->input->post('search'),
 			'limit'=>$this->input->post('limit'),
-			'status'=>$this->input->post('status')
+			'status'=>$this->input->post('status'),
+			'event'=>$this->input->post('event'),
 		);
 		redirect('telemarketing'.get_query_string($data));		
 	}	
-	public function phone(){
+	public function phone($id){
 		$this->form_validation->set_rules('status','Status','trim');
 		if($this->form_validation->run()===false){
-			$data['content'] = 
+			$xdata['candidate'] 	= $this->telemarketing_model->get_candidate($id);
+			$xdata['breadcrumb']	= 'telemarketing'.get_query_string();
+			$xdata['callhis']		= $this->telemarketing_model->get_call($id);
+			$data['content'] = $this->load->view('telemarketing_form',$xdata,true);
+			$this->load->view('template',$data);
 		}else{
 
 		}

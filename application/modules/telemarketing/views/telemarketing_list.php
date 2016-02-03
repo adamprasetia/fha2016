@@ -1,20 +1,13 @@
 <section class="content-header">
 	<h1>
-		User
-		<small>List</small>
+		Candidate List
 	</h1>
-	<ol class="breadcrumb pull-right">
+	<ol class="breadcrumb">
 		<li><?php echo anchor('home','<span class="glyphicon glyphicon-home"></span> Home')?></li>
 		<li class="active">List</li>
 	</ol>
 </section>
 <section class="content">
-	<div class="box box-default">
-		<div class="box-body">
-			<?php echo $add_btn?>
-			<?php echo $delete_btn?>
-		</div>
-	</div>
 	<div class="box box-default">
 		<div class="box-body">
 			<?php echo form_open($action,array('class'=>'form-inline'))?>
@@ -26,17 +19,15 @@
 					<?php echo form_input(array('name'=>'search','value'=>$this->input->get('search'),'autocomplete'=>'off','placeholder'=>'Search..','onchange=>"submit()"','class'=>'form-control input-sm'))?>
 				</div>
 				<div class="form-group">
-					<?php echo form_dropdown('level',$this->master_model->dropdown('user_level','Level'),$this->input->get('level'),'class="form-control input-sm" onchange="submit()"')?>
+					<?php echo form_dropdown('event',$this->master_model->dropdown('event','Event'),$this->input->get('event'),'class="form-control input-sm" onchange="submit()"')?>
 				</div>
 				<div class="form-group">
-					<?php echo form_dropdown('status',$this->master_model->dropdown('user_status','Status'),$this->input->get('status'),'class="form-control input-sm" onchange="submit()"')?>
+					<?php echo form_dropdown('status',$this->master_model->dropdown('candidate_status','Status'),$this->input->get('status'),'class="form-control input-sm" onchange="submit()"')?>
 				</div>
 			<?php echo form_close()?>
-			<?php echo form_open($action_delete,array('class'=>'form-check-delete'))?>
 			<div class="table-responsive">
 				<?php echo $table?>
 			</div>
-			<?php echo form_close()?>
 		</div>
 		<div class="box-footer">
 			<?php echo form_label($total,'',array('class'=>'label-footer'))?>
