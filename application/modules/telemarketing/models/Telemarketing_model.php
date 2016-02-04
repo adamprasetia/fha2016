@@ -57,4 +57,14 @@ class Telemarketing_model extends CI_Model {
 		}
 		return $data;
 	}
+	public function status_dropdown($tbl_name = '',$caption = '', $parent){
+		$tbl_name = ($tbl_name <> ''?$tbl_name:$this->tbl_name);
+		$result = $this->db->where('parent',$parent);
+		$result = $this->db->get($tbl_name)->result();
+		$data[''] = '- '.$caption.' -';
+		foreach($result as $r){
+			$data[$r->id] = $r->name;
+		}
+		return $data;
+	}			
 }
