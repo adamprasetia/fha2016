@@ -70,17 +70,19 @@
 		});
 
 		$('body').on('click','.btn-callhis-delete',function(){
-			$.ajax({
-				url:'<?php echo base_url() ?>index.php/telemarketing/callhis/delete',
-				type:'post',
-				data:{
-					id:$(this).attr('value'),
-					candidate:'<?php echo $candidate->id ?>'
-				},
-				success:function(str){
-					$('.box-callhis').html(str);
-				}
-			});				
+			if(confirm('You sure ?')){
+				$.ajax({
+					url:'<?php echo base_url() ?>index.php/telemarketing/callhis/delete',
+					type:'post',
+					data:{
+						id:$(this).attr('value'),
+						candidate:'<?php echo $candidate->id ?>'
+					},
+					success:function(str){
+						$('.box-callhis').html(str);
+					}
+				});				
+			}
 		});		
 	})
 </script>
