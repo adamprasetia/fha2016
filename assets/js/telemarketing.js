@@ -57,6 +57,8 @@ $(document).ready(function(){
 		var push = $('input[type=radio][name=push]:checked').val();
 		if(fminute==1 || push==1){
 			$('.box-eknow').removeClass('hide');
+		}else{
+			$('.box-eknow').addClass('hide');
 		}
 	}
 	check_fminute_push();
@@ -121,9 +123,11 @@ $(document).ready(function(){
 		if(radio==1){
 			$('.box-sendemail-ya').removeClass('hide');
 			$('.box-sendemail-tidak').addClass('hide');
+			$('.box-attend').removeClass('hide');
 		}else if(radio==2){
 			$('.box-sendemail-ya').addClass('hide');
 			$('.box-sendemail-tidak').removeClass('hide');
+			$('.box-attend').removeClass('hide');
 		}			
 	}
 	check_sendemail();

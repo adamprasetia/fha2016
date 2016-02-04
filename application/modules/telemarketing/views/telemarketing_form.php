@@ -84,6 +84,7 @@
 			</div>	
 			<div class="box box-fminute hide">
 				<div class="box-body">
+					<h3>Selamat <?php echo (date('G')<10?'pagi':(date('G')<15?'siang':'sore')) ?>. Nama saya <b><?php echo $this->user_login['name'] ?></b> dan saya mewakili <b>Singapore Exhibitions Services</b>, penyelenggara <b><?php echo $candidate->event_name ?></b> di Singapura.</h3>
 					<h3>Bisakah saya minta waktunya beberapa menit ?</h3>
 					<div class="radio">
 						<label>
@@ -101,7 +102,7 @@
 			</div>				
 			<div class="box box-push-ya hide">
 				<div class="box-body">
-					<h3>Terima kasih Pak/Ibu</h3>
+					<h3>Terima kasih</h3>
 					<p>(lanjut ke Pertanyaan berikutnya)</p>
 				</div>	
 			</div>	
@@ -132,7 +133,7 @@
 			</div>	
 			<div class="box box-eknow hide">
 				<div class="box-body">
-					<h3>Apakah Anda sudah mengetahui bahwa FHA 2016 akan diselenggarakan tanggal 12-15 April di Singapore Expo ?</h3>
+					<h3>Apakah Anda sudah mengetahui bahwa <b><?php echo $candidate->event_name ?></b> akan diselenggarakan tanggal 12-15 April di Singapore Expo ?</h3>
 					<div class="radio">
 						<label>
 							<?php echo form_radio(array('id'=>'eknow1','name'=>'eknow','value'=>'1','checked'=>($candidate->eknow==1?true:false))) ?>
@@ -149,7 +150,7 @@
 			</div>	
 			<div class="box box-eknow-ya hide">
 				<div class="box-body">
-					<h3>Bagus. Sudahkah anda melakukan pra pendaftaran ke FHA 2016 ?</h3>
+					<h3>Bagus. Sudahkah anda melakukan pra pendaftaran ke <b><?php echo $candidate->event_name ?></b> ?</h3>
 					<div class="radio">
 						<label>
 							<?php echo form_radio(array('id'=>'register1','name'=>'register','value'=>'1','checked'=>($candidate->register==1?true:false))) ?>
@@ -202,8 +203,8 @@
 			</div>	
 			<div class="box box-eknow-tidak hide">
 				<div class="box-body">
-					<p>(Berikan info tentang FHA 2016)</p>
-					<h3>Dapatkah saya kirimkan email kepada Anda undangan untuk menghadiri FHA 2016 bersama dengan informasi acara dan link ke pra-pendaftaran secara online ?</h3>
+					<p>(Berikan info tentang <b><?php echo $candidate->event_name ?></b>)</p>
+					<h3>Dapatkah saya kirimkan email kepada Anda undangan untuk menghadiri <b><?php echo $candidate->event_name ?></b> bersama dengan informasi acara dan link ke pra-pendaftaran secara online ?</h3>
 					<div class="radio">
 						<label>
 							<?php echo form_radio(array('id'=>'sendemail1','name'=>'sendemail','value'=>'1','checked'=>($candidate->sendemail==1?true:false))) ?>
@@ -231,7 +232,35 @@
 					<h3>Jika Anda tertarik untuk mengunjungi acara, silakan lakukan pra-pendaftaran kunjungan Anda secara online di www.foodnhotelasia.com sebelum 31 Maret 2016. </h3>
 					<h3>Jika tidak, akan ada biaya masuk sebesar SGD 80 untuk pendaftaran onsite (di tempat acara).</h3>
 					<h3>Apakah juga membawa rekan Anda dan teman-teman di industri untuk pertunjukan karena saya yakin bahwa itu akan relevan dan bermanfaat bagi pekerjaan mereka juga. Rekan Anda juga harus melakukan pra-pendaftaran secara online untuk menikmati tiket masuk gratis ke pameran.</h3>
-					<h3>Harap menyimpan email yang akan saya kirimkan kepada Anda segera. Terima kasih dan kami berharap untuk dapat berjumpa dengan Anda.</h3> 
+					<h3>Harap menyimpan email yang akan saya kirimkan kepada Anda segera.</h3>
+				</div>				
+			</div>		
+			<div class="box box-attend hide">
+				<div class="box-body">
+					<h3>Jadi apakah anda akan meluangkan waktu untuk mengahadiri <b><?php echo $candidate->event_name ?></b> ?</h3>
+					<div class="radio">
+						<label>
+							<?php echo form_radio(array('id'=>'attend1','name'=>'attend','value'=>'1','checked'=>($candidate->attend==1?true:false))) ?>
+							Ya
+						</label>
+					</div>				
+					<div class="radio">
+						<label>
+							<?php echo form_radio(array('id'=>'attend2','name'=>'attend','value'=>'2','checked'=>($candidate->attend==2?true:false))) ?>
+							Tidak
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<?php echo form_radio(array('id'=>'attend2','name'=>'attend','value'=>'2','checked'=>($candidate->attend==3?true:false))) ?>
+							Ragu-ragu
+						</label>
+					</div>
+				</div>				
+			</div>		
+			<div class="box box-sendemail-ya hide">
+				<div class="box-body">
+ 					<h3>Terima kasih banyak atas waktunya. Semoga hari ini menyenangkan buat anda</h3>
 					<p>(End call) (Kirim Email)</p>
 				</div>				
 			</div>		
