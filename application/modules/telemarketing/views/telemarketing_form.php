@@ -9,12 +9,14 @@
 	  <li class="active">Telemarketing</li>
 	</ol>
 </section>
-<?php echo form_open('telemarketing/phone') ?>
+<?php echo form_open($action) ?>
 <section class="content">
+<?php echo $this->session->flashdata('alert')?>
 	<div class="box">
 		<div class="box-body">
 			Status : 
-			<?php echo form_dropdown('status',$this->telemarketing_model->status_dropdown('candidate_status','Status',0),set_value('status',(isset($candidate->status)?$candidate->status:''))) ?>
+			<?php echo form_dropdown('status',$this->telemarketing_model->status_dropdown('candidate_status','Status'),set_value('status',(isset($candidate->status)?$candidate->status:''))) ?>
+			<button class="btn btn-success btn-sm" type="submit" onclick="return confirm('Are you sure')"><span class="glyphicon glyphicon-save"></span> Save</button>
 		</div>	
 	</div>	
 	<div class="row">
@@ -47,14 +49,14 @@
 						<tr>
 							<td><?php echo $row->date ?></td>
 							<td><?php echo $row->status ?></td>
-							<td><button class="btn btn-danger btn-xs btn-callhis-delete" value="<?php echo $row->id ?>">Delete</button></td>
+							<td><button type="button" class="btn btn-danger btn-xs btn-callhis-delete" value="<?php echo $row->id ?>">Delete</button></td>
 						</tr>							
 						<?php endforeach ?>
 					</table>
 				</div>	
 				<div class="box-footer">
-					<button class="btn btn-success btn-xs btn-callhis" value="Answer">Answer</button>
-					<button class="btn btn-warning btn-xs btn-callhis" value="No Answer">No Answer</button>
+					<button type="button" class="btn btn-success btn-xs btn-callhis" value="Answer">Answer</button>
+					<button type="button" class="btn btn-warning btn-xs btn-callhis" value="No Answer">No Answer</button>
 				</div>	
 			</div>	
 		</div>

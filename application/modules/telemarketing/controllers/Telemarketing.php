@@ -34,7 +34,7 @@ class Telemarketing extends MY_Controller {
 			$count_call = $this->telemarketing_model->count_call($r->id);
 			$this->table->add_row(
 				$i++,
-				$r->sn.($r->audit==1?' <span class="label label-primary">Audit</span>':''),
+				anchor('telemarketing/phone/'.$r->id.get_query_string(),$r->sn).($r->audit==1?' <span class="label label-primary">Audit</span>':''),
 				$r->name,
 				$r->title,
 				$r->company,
@@ -72,10 +72,16 @@ class Telemarketing extends MY_Controller {
 			$xdata['candidate'] 	= $this->telemarketing_model->get_candidate($id);
 			$xdata['breadcrumb']	= 'telemarketing'.get_query_string();
 			$xdata['callhis']		= $this->telemarketing_model->get_call($id);
+			$xdata['action']		= 'telemarketing/phone/'.$id.get_query_string();
 			$data['content'] = $this->load->view('telemarketing_form',$xdata,true);
 			$this->load->view('template',$data);
 		}else{
-
+			$data = array(
+				'status'=>$this->input->post('status')
+			);
+			$this->telemarketing_model->phone($id,$data);
+			$this->session->set_flashdata('alert','<div class="alert alert-success">Data has been saved</div>');
+			redirect('telemarketing/phone/'.$id.get_query_string());			
 		}
 	}
 }

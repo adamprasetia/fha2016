@@ -298,3 +298,19 @@ function date_to_excel($id){
     }
     return $date;
 }
+function candidate_status(){
+    $data = array(
+        ''=>' - Status - ',
+        'Connect'=>array(
+            '11'=>'Connect to Candidate',
+            '12'=>'Connect to Receptionist',
+            '13'=>'Disconnected'
+        ),
+        'Not Connect'=>array(
+            '21'=>'No Answer',
+            '22'=>'Busy',
+            '23'=>'Tulalit'
+        )
+    );
+    return $data;
+}

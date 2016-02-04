@@ -1,6 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Telemarketing_model extends CI_Model {
+	public function phone($id,$data){
+		$this->db->where('id',$id);
+		$this->db->update('candidate',$data);
+	}
 	public function get_candidate($id){
 		$this->db->where('id',$id);
 		$this->db->from('candidate');
@@ -57,14 +61,24 @@ class Telemarketing_model extends CI_Model {
 		}
 		return $data;
 	}
-	public function status_dropdown($tbl_name = '',$caption = '', $parent){
+	public function status_dropdown($tbl_name = '',$caption = ''){
 		$tbl_name = ($tbl_name <> ''?$tbl_name:$this->tbl_name);
-		$result = $this->db->where('parent',$parent);
+		$result = $this->db->where('parent',0);
 		$result = $this->db->get($tbl_name)->result();
 		$data[''] = '- '.$caption.' -';
+		foreach($result as $r){
+			$data[$r->name] = $this->status_detail($r->id);
+		}
+		return $data;
+	}
+	private function status_detail($parent){
+		$this->db->where('parent',$parent);
+		$result = $this->db->get('candidate_status')->result();
+		$data = array();
 		foreach($result as $r){
 			$data[$r->id] = $r->name;
 		}
 		return $data;
-	}			
+
+	}
 }

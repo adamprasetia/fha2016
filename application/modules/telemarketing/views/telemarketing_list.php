@@ -22,7 +22,7 @@
 					<?php echo form_dropdown('event',$this->master_model->dropdown('event','Event'),$this->input->get('event'),'class="form-control input-sm" onchange="submit()"')?>
 				</div>
 				<div class="form-group">
-					<?php echo form_dropdown('status',$this->master_model->dropdown('candidate_status','Status'),$this->input->get('status'),'class="form-control input-sm" onchange="submit()"')?>
+					<?php echo form_dropdown('status',candidate_status(),$this->input->get('status'),'class="form-control input-sm" onchange="submit()"')?>
 				</div>
 			<?php echo form_close()?>
 			<div class="table-responsive">
