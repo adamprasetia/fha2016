@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
--- Host:                         localhost
--- Server version:               5.6.26 - MySQL Community Server (GPL)
+-- Host:                         127.0.0.1
+-- Server version:               5.5.8 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL Version:             9.3.0.4984
 -- --------------------------------------------------------
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `call_history` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
--- Dumping data for table fha2016.call_history: ~3 rows (approximately)
+-- Dumping data for table fha2016.call_history: ~6 rows (approximately)
 /*!40000 ALTER TABLE `call_history` DISABLE KEYS */;
 INSERT INTO `call_history` (`id`, `candidate`, `date`, `status`) VALUES
 	(1, 1, '0000-00-00 00:00:00', 'Answer'),
@@ -41,14 +41,30 @@ CREATE TABLE IF NOT EXISTS `candidate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sn` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
+  `name_new` varchar(100) NOT NULL,
   `title` varchar(100) NOT NULL,
+  `title_new` varchar(100) NOT NULL,
   `company` varchar(100) NOT NULL,
+  `company_new` varchar(100) NOT NULL,
   `tlp` varchar(50) NOT NULL,
+  `tlp_new` varchar(50) NOT NULL,
+  `mobile` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `date` date NOT NULL,
   `event` int(11) NOT NULL,
   `telemarketer` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL,
   `audit` tinyint(4) NOT NULL,
+  `note` varchar(100) NOT NULL,
+  `new_contact` tinyint(4) NOT NULL,
+  `called` tinyint(4) NOT NULL,
+  `fminute` tinyint(4) NOT NULL,
+  `push` tinyint(4) NOT NULL,
+  `eknow` tinyint(4) NOT NULL,
+  `sendemail` tinyint(4) NOT NULL,
+  `sendsms` tinyint(4) NOT NULL,
+  `register` tinyint(4) NOT NULL,
+  `attend` tinyint(4) NOT NULL,
   `user_create` int(11) NOT NULL,
   `date_create` datetime NOT NULL,
   `user_update` int(11) NOT NULL,
@@ -58,13 +74,13 @@ CREATE TABLE IF NOT EXISTS `candidate` (
 
 -- Dumping data for table fha2016.candidate: ~6 rows (approximately)
 /*!40000 ALTER TABLE `candidate` DISABLE KEYS */;
-INSERT INTO `candidate` (`id`, `sn`, `name`, `title`, `company`, `tlp`, `date`, `event`, `telemarketer`, `status`, `audit`, `user_create`, `date_create`, `user_update`, `date_update`) VALUES
-	(1, '111', 'ARIEL NOAH', 'MUSISI', 'NOAH BAND', '081234567890', '2016-02-02', 4, 0, 11, 0, 12, '2016-02-02 20:24:25', 0, '0000-00-00 00:00:00'),
-	(2, '222', 'JULIA PERES', 'ARTIS', 'DANGDUT INC', '089876543210', '2016-02-02', 4, 0, 12, 1, 12, '2016-02-02 20:24:25', 0, '0000-00-00 00:00:00'),
-	(3, '111', 'ARIEL NOAH', 'MUSISI', 'NOAH BAND', '081234567890', '2016-02-02', 5, 0, 21, 0, 12, '2016-02-02 20:25:15', 0, '0000-00-00 00:00:00'),
-	(4, '222', 'JULIA PERES', 'ARTIS', 'DANGDUT INC', '089876543210', '2016-02-02', 5, 0, 14, 0, 12, '2016-02-02 20:25:15', 0, '0000-00-00 00:00:00'),
-	(5, '111', 'Ariel Noah', 'Musisi', 'Noah Band', '081234567890', '2016-02-02', 6, 0, 0, 1, 12, '2016-02-02 21:46:51', 0, '0000-00-00 00:00:00'),
-	(6, '222', 'Julia Peres', 'Artis', 'Dangdut Inc', '089876543210', '2016-02-02', 6, 0, 11, 0, 12, '2016-02-02 21:46:51', 0, '0000-00-00 00:00:00');
+INSERT INTO `candidate` (`id`, `sn`, `name`, `name_new`, `title`, `title_new`, `company`, `company_new`, `tlp`, `tlp_new`, `mobile`, `email`, `date`, `event`, `telemarketer`, `status`, `audit`, `note`, `new_contact`, `called`, `fminute`, `push`, `eknow`, `sendemail`, `sendsms`, `register`, `attend`, `user_create`, `date_create`, `user_update`, `date_update`) VALUES
+	(1, '111', 'ARIEL NOAH', '', 'MUSISI', '', 'NOAH BAND', '', '081234567890', '', '', '', '2016-02-02', 4, 0, 11, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, '2016-02-02 20:24:25', 0, '0000-00-00 00:00:00'),
+	(2, '222', 'JULIA PERES', '', 'ARTIS', '', 'DANGDUT INC', '', '089876543210', '', '', '', '2016-02-02', 4, 0, 12, 1, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, '2016-02-02 20:24:25', 0, '0000-00-00 00:00:00'),
+	(3, '111', 'ARIEL NOAH', '', 'MUSISI', '', 'NOAH BAND', '', '081234567890', '', '', '', '2016-02-02', 5, 0, 21, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, '2016-02-02 20:25:15', 0, '0000-00-00 00:00:00'),
+	(4, '222', 'JULIA PERES', '', 'ARTIS', '', 'DANGDUT INC', '', '089876543210', '', '', '', '2016-02-02', 5, 0, 14, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, '2016-02-02 20:25:15', 0, '0000-00-00 00:00:00'),
+	(5, '111', 'Ariel Noah', '', 'Musisi', '', 'Noah Band', '', '081234567890', '', '', '', '2016-02-02', 6, 0, 0, 1, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, '2016-02-02 21:46:51', 0, '0000-00-00 00:00:00'),
+	(6, '222', 'Julia Peres', '', 'Artis', '', 'Dangdut Inc', '', '089876543210', '', '083817321885', '', '2016-02-02', 6, 0, 11, 0, '', 0, 1, 1, 2, 1, 0, 1, 1, 0, 12, '2016-02-02 21:46:51', 0, '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `candidate` ENABLE KEYS */;
 
 
@@ -80,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `candidate_status` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
--- Dumping data for table fha2016.candidate_status: ~8 rows (approximately)
+-- Dumping data for table fha2016.candidate_status: ~9 rows (approximately)
 /*!40000 ALTER TABLE `candidate_status` DISABLE KEYS */;
 INSERT INTO `candidate_status` (`id`, `name`, `parent`, `user_create`, `date_create`, `user_update`, `date_update`) VALUES
 	(1, 'Connect', 0, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
@@ -111,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `event` (
 INSERT INTO `event` (`id`, `name`, `user_create`, `date_create`, `user_update`, `date_update`) VALUES
 	(4, 'Food & Hotel Asia 2016', 12, '2016-02-02 19:39:48', 0, '0000-00-00 00:00:00'),
 	(5, 'Pro Wine Asia 2016', 12, '2016-02-02 19:40:37', 0, '0000-00-00 00:00:00'),
-	(6, 'FHA & PWA 2016 Combined', 12, '2016-02-02 19:55:40', 0, '0000-00-00 00:00:00');
+	(6, 'FHA2016 and ProWine ASIA 2016', 12, '2016-02-02 19:55:40', 0, '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `event` ENABLE KEYS */;
 
 
@@ -137,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table fha2016.user: ~7 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `name`, `username`, `password`, `level`, `ip_login`, `date_login`, `user_agent`, `status`, `user_create`, `date_create`, `user_update`, `date_update`) VALUES
-	(12, 'Adam Prasetia', 'damz', '202cb962ac59075b964b07152d234b70', 1, '::1', '2016-02-04 11:21:58', 'Windows 8.1(Google Chrome 48.0.2564.97)', 1, 0, '0000-00-00 00:00:00', 12, '2016-02-01 23:44:22'),
+	(12, 'Adam Prasetia', 'damz', '202cb962ac59075b964b07152d234b70', 1, '127.0.0.1', '2016-02-04 21:45:57', 'Windows 7(Google Chrome 48.0.2564.97)', 1, 0, '0000-00-00 00:00:00', 12, '2016-02-01 23:44:22'),
 	(13, 'Teguh Santoso', 'teguh', 'e2f9f842fd8e1ae90dc428d39cab7167', 1, '127.0.0.1', '2016-02-01 17:11:28', 'Windows 7(Google Chrome 48.0.2564.97)', 1, 1, '2016-02-01 17:07:02', 0, '0000-00-00 00:00:00'),
 	(14, 'Jaka', 'jack', '202cb962ac59075b964b07152d234b70', 3, '', '0000-00-00 00:00:00', '', 1, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
 	(15, 'Bhakti', 'bray', '202cb962ac59075b964b07152d234b70', 3, '', '0000-00-00 00:00:00', '', 1, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
