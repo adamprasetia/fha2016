@@ -85,40 +85,141 @@
 			<div class="box box-fminute hide">
 				<div class="box-body">
 					<h3>Bisakah saya minta waktunya beberapa menit ?</h3>
-					<div class="checkbox">
+					<div class="radio">
 						<label>
-							<?php echo form_checkbox(array('id'=>'fminute','name'=>'fminute','value'=>'1','checked'=>set_value('fminute',($candidate->fminute==1?true:false)))) ?>
+							<?php echo form_radio(array('id'=>'fminute1','name'=>'fminute','value'=>'1','checked'=>($candidate->fminute==1?true:false))) ?>
 							Ya
 						</label>
 					</div>				
-					<p>(Jika Tidak)</p>
+					<div class="radio">
+						<label>
+							<?php echo form_radio(array('id'=>'fminute2','name'=>'fminute','value'=>'2','checked'=>($candidate->fminute==2?true:false))) ?>
+							Tidak
+						</label>
+					</div>				
+				</div>				
+			</div>				
+			<div class="box box-push-ya hide">
+				<div class="box-body">
+					<h3>Terima kasih Pak/Ibu</h3>
+					<p>(lanjut ke Pertanyaan berikutnya)</p>
+				</div>	
+			</div>	
+			<div class="box box-push-tidak hide">
+				<div class="box-body">
 					<h3>Ini tidak akan memakan waktu yang lama. Kami hanya ingin mengetahui apakah anda sudah register untuk event di Bulan April 2016</h3>
-	     			<p>(Jika Responden menolak)</p>
-	      			<h3>Saya minta maaf sudah menggangu waktu Anda. Kapan kira kira bisa dihubungi kembali?</h3>
-	      			<p>(catat tgl, waktu untuk dihubungi)</p>
+					<div class="radio">
+						<label>
+							<?php echo form_radio(array('id'=>'push1','name'=>'push','value'=>'1','checked'=>($candidate->push==1?true:false))) ?>
+							Ya
+						</label>
+					</div>				
+					<div class="radio">
+						<label>
+							<?php echo form_radio(array('id'=>'push2','name'=>'push','value'=>'2','checked'=>($candidate->push==2?true:false))) ?>
+							Tidak
+						</label>
+					</div>
+					<div class="push-tidak-ya hide">
+	    			<h3>Terima kasih</h3>
+	    			<p>(lanjut ke Pertanyaan berikutnya)</p>
+    			</div>
+					<div class="push-tidak-tidak hide">
+	    			<h3>Saya minta maaf sudah menggangu waktu Anda. Kapan kira kira bisa dihubungi kembali?</h3>
+	    			<p>(catat tgl, waktu untuk dihubungi)</p>
+    			</div>
 				</div>	
 			</div>	
 			<div class="box box-eknow hide">
 				<div class="box-body">
 					<h3>Apakah Anda sudah mengetahui bahwa FHA 2016 akan diselenggarakan tanggal 12-15 April di Singapore Expo ?</h3>
-					<div class="checkbox">
+					<div class="radio">
 						<label>
-							<?php echo form_checkbox(array('id'=>'eknow','name'=>'eknow','value'=>'1','checked'=>set_value('eknow',($candidate->eknow==1?true:false)))) ?>
+							<?php echo form_radio(array('id'=>'eknow1','name'=>'eknow','value'=>'1','checked'=>($candidate->eknow==1?true:false))) ?>
 							Ya
 						</label>
-					</div>
-					<p>Jika Tidak : (Berikan info tentang FHA 2016) 
+					</div>				
+					<div class="radio">
+						<label>
+							<?php echo form_radio(array('id'=>'eknow2','name'=>'eknow','value'=>'2','checked'=>($candidate->eknow==2?true:false))) ?>
+							Tidak
+						</label>
+					</div>					
 				</div>	
 			</div>	
-			<div class="box box-sendemail hide">
+			<div class="box box-eknow-ya hide">
 				<div class="box-body">
-					<h3>Dapatkah saya kirimkan email kepada Anda undangan untuk menghadiri FHA 2016 bersama dengan informasi acara dan link ke pra-pendaftaran secara online ?</h3>
-					<div class="checkbox">
+					<h3>Bagus. Sudahkah anda melakukan pra pendaftaran ke FHA 2016 ?</h3>
+					<div class="radio">
 						<label>
-							<?php echo form_checkbox(array('id'=>'sendemail','name'=>'sendemail','value'=>'1','checked'=>set_value('sendemail',($candidate->sendemail==1?true:false)))) ?>
+							<?php echo form_radio(array('id'=>'register1','name'=>'register','value'=>'1','checked'=>($candidate->register==1?true:false))) ?>
 							Ya
 						</label>
+					</div>				
+					<div class="radio">
+						<label>
+							<?php echo form_radio(array('id'=>'register2','name'=>'register','value'=>'2','checked'=>($candidate->register==2?true:false))) ?>
+							Tidak
+						</label>
+					</div>					
+				</div>	
+			</div>
+			<div class="box box-register-ya hide">
+				<div class="box-body">
+					<h3>Terima kasih atas dukungan dan waktunya. Mohon diingat untuk membawa email konfirmasi Anda untuk koleksi lencana/badge anda. Jika Anda ingin kami mengirimkan reminder/pengingat acara, Anda dapat memberikan nomor ponsel Anda dan kami akan mengirimkan SMS Reminder/pengingat. </h3>					
+					<div class="radio">
+						<label>
+							<?php echo form_radio(array('id'=>'sendsms1','name'=>'sendsms','value'=>'1','checked'=>($candidate->sendsms==1?true:false))) ?>
+							Ya
+						</label>
+					</div>				
+					<div class="radio">
+						<label>
+							<?php echo form_radio(array('id'=>'sendsms2','name'=>'sendsms','value'=>'2','checked'=>($candidate->sendsms==2?true:false))) ?>
+							Tidak
+						</label>
+					</div>					
+				</div>	
+			</div>				
+			<div class="box box-sendsms-ya hide">
+				<div class="box-body">
+					<p>(Dapatkan nomor ponsel)</p>
+					<table class="table">
+						<tr>
+							<td style="vertical-align:middle">Mobile Phone</td>
+							<td><?php echo form_input(array('name'=>'mobile','maxlength'=>'50','class'=>'form-control','size'=>'40','autocomplete'=>'off','value'=>set_value('mobile',$candidate->mobile))) ?></td>
+						</tr>
+					</table>										
+					<h3>Sampai jumpa di acara tersebut!</h3> 
+					<p>(Selesai)</p>
+				</div>	
+			</div>	
+			<div class="box box-sendsms-tidak hide">
+				<div class="box-body">
+					<h3>Sampai jumpa di acara tersebut!</h3> 
+					<p>(Selesai)</p>
+				</div>	
+			</div>	
+			<div class="box box-eknow-tidak hide">
+				<div class="box-body">
+					<p>(Berikan info tentang FHA 2016)</p>
+					<h3>Dapatkah saya kirimkan email kepada Anda undangan untuk menghadiri FHA 2016 bersama dengan informasi acara dan link ke pra-pendaftaran secara online ?</h3>
+					<div class="radio">
+						<label>
+							<?php echo form_radio(array('id'=>'sendemail1','name'=>'sendemail','value'=>'1','checked'=>($candidate->sendemail==1?true:false))) ?>
+							Ya
+						</label>
+					</div>				
+					<div class="radio">
+						<label>
+							<?php echo form_radio(array('id'=>'sendemail2','name'=>'sendemail','value'=>'2','checked'=>($candidate->sendemail==2?true:false))) ?>
+							Tidak
+						</label>
 					</div>
+				</div>	
+			</div>	
+			<div class="box box-sendemail-ya hide">
+				<div class="box-body">
  					(Minta alamat emailnya)
  					<table class="table">
 						<tr>
@@ -127,54 +228,18 @@
 						</tr>
 					</table>					
 
-					<p>Jika Anda tertarik untuk mengunjungi acara, silakan lakukan pra-pendaftaran kunjungan Anda secara online di www.foodnhotelasia.com sebelum 31 Maret 2016. </p>
-					<p>Jika <b>tidak</b>, akan ada biaya masuk sebesar SGD 80 untuk pendaftaran onsite (di tempat acara).</p>
-					<p>Apakah juga membawa rekan Anda dan teman-teman di industri untuk pertunjukan karena saya yakin bahwa itu akan relevan dan bermanfaat bagi pekerjaan mereka juga. Rekan Anda juga harus melakukan pra-pendaftaran secara online untuk menikmati tiket masuk gratis ke pameran.</p>
-					<p>Harap menyimpan email yang akan saya kirimkan kepada Anda segera. Terima kasih dan kami berharap untuk dapat berjumpa dengan Anda. (End call) (Kirim Email)</p>
-					<p>Jika benar benar <b>tidak tertarik</b> : Terima kasih banyak atas waktunya. Semoga hari ini menyenangkan buat anda</p>
+					<h3>Jika Anda tertarik untuk mengunjungi acara, silakan lakukan pra-pendaftaran kunjungan Anda secara online di www.foodnhotelasia.com sebelum 31 Maret 2016. </h3>
+					<h3>Jika tidak, akan ada biaya masuk sebesar SGD 80 untuk pendaftaran onsite (di tempat acara).</h3>
+					<h3>Apakah juga membawa rekan Anda dan teman-teman di industri untuk pertunjukan karena saya yakin bahwa itu akan relevan dan bermanfaat bagi pekerjaan mereka juga. Rekan Anda juga harus melakukan pra-pendaftaran secara online untuk menikmati tiket masuk gratis ke pameran.</h3>
+					<h3>Harap menyimpan email yang akan saya kirimkan kepada Anda segera. Terima kasih dan kami berharap untuk dapat berjumpa dengan Anda.</h3> 
+					<p>(End call) (Kirim Email)</p>
 				</div>				
-			</div>				
-			<div class="box box-register hide">
+			</div>		
+			<div class="box box-sendemail-tidak hide">
 				<div class="box-body">
-					<h3>Sudahkah anda melakukan pra pendaftaran ke FHA 2016 ?</h3>
-					<div class="checkbox">
-						<label>
-							<?php echo form_checkbox(array('id'=>'register','name'=>'register','value'=>'1','checked'=>set_value('register',($candidate->register==1?true:false)))) ?>
-							Ya
-						</label>
-					</div>				
+ 					<h3>Terima kasih banyak atas waktunya. Semoga hari ini menyenangkan buat anda</h3>
 				</div>				
-			</div>				
-			<div class="box box-sendsms hide">
-				<div class="box-body">
-					<h3>Terima kasih atas dukungan dan waktunya. Mohon diingat untuk membawa email konfirmasi Anda untuk koleksi lencana/badge anda. Jika Anda ingin kami mengirimkan reminder/pengingat acara, Anda dapat memberikan nomor ponsel Anda dan kami akan mengirimkan SMS Reminder/pengingat.</h3>
-					<div class="checkbox">
-						<label>
-							<?php echo form_checkbox(array('id'=>'sendsms','name'=>'sendsms','value'=>'1','checked'=>set_value('sendsms',($candidate->sendsms==1?true:false)))) ?>
-							Ya
-						</label>
-					</div>				
-					<p> (Dapatkan nomor ponsel)</p>
-					<table class="table">
-						<tr>
-							<td style="vertical-align:middle">Mobile Phone</td>
-							<td><?php echo form_input(array('name'=>'mobile','maxlength'=>'50','class'=>'form-control','size'=>'40','autocomplete'=>'off','value'=>set_value('mobile',$candidate->mobile))) ?></td>
-						</tr>
-					</table>					
-					<h3>Sampai jumpa di acara tersebut!</h3> (Selesai)
-				</div>	
-			</div>	
-			<div class="box box-register hide">
-				<div class="box-body">
-					<h3>Apakah anda akan datang ke event</h3>
-					<div class="checkbox">
-						<label>
-							<?php echo form_checkbox(array('id'=>'attend','name'=>'attend','value'=>'1','checked'=>set_value('attend',($candidate->attend==1?true:false)))) ?>
-							Ya
-						</label>
-					</div>				
-				</div>				
-			</div>				
+			</div>		
 		</div>
 		<div class="col-md-4 col-sm-4">
 			<div class="box">

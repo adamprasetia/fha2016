@@ -88,6 +88,7 @@ class Telemarketing extends MY_Controller {
 				'note'=>$this->input->post('note'),
 				'called'=>$this->input->post('called'),
 				'fminute'=>$this->input->post('fminute'),
+				'push'=>$this->input->post('push'),
 				'eknow'=>$this->input->post('eknow'),
 				'register'=>$this->input->post('register'),
 				'email'=>$this->input->post('email'),
