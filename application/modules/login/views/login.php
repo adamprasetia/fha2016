@@ -20,11 +20,15 @@
 		<div class="box box-default">
 			<div class="box-body">
 				<h3>Please sign in here</h3>
+				<hr>
 				<input type="text" class="form-control" name="username" placeholder="Username" autocomplete="off" autofocus>
 				<input type="password" class="form-control" name="password" placeholder="Password">
 			</div>	
 			<div class="box-footer">
 				<input type="submit" class="btn btn-primary btn-sm" value="Sign in">
+			</div>	
+			<div class="box-footer">
+				New Telemarketer ? Register <?php echo anchor('registration','Here') ?>
 			</div>	
 		</div>	
 		<?php echo form_close() ?>
