@@ -23,12 +23,12 @@
 			<?php echo $this->session->flashdata('alert')?>
 			<div class="form-group">
 				<?php echo form_label('Fullname','name',array('class'=>'control-label'))?>
-				<?php echo form_input(array('name'=>'name','class'=>'form-control input-sm','maxlength'=>'50','autocomplete'=>'off','required'=>'required','autofocus'=>'autofocus'))?>
+				<?php echo form_input(array('name'=>'name','class'=>'form-control input-sm','maxlength'=>'50','autocomplete'=>'off','required'=>'required','value'=>set_value('name',''),'autofocus'=>'autofocus'))?>
 				<small><?php echo form_error('name')?></small>
 			</div>
 			<div class="form-group">
 				<?php echo form_label('Username','username',array('class'=>'control-label'))?>
-				<?php echo form_input(array('name'=>'username','class'=>'form-control input-sm','maxlength'=>'50','autocomplete'=>'off','required'=>'required'))?>
+				<?php echo form_input(array('name'=>'username','class'=>'form-control input-sm','maxlength'=>'50','autocomplete'=>'off','required'=>'required','value'=>set_value('username','')))?>
 				<small><?php echo form_error('username')?></small>
 			</div>
 			<hr>

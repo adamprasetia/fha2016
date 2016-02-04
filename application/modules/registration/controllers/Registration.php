@@ -17,6 +17,7 @@ class Registration extends CI_Controller {
 				'username'    => $this->input->post('username'),
 				'password'    => md5($this->input->post('password')),
 				'level'       => 3,
+				'status' 	  => 1,
 				'date_create' => date('Y-m-d H:i:s')
 			);
 			$this->registration_model->register($data);
