@@ -6,8 +6,10 @@ class Telemarketing_model extends CI_Model {
 		$this->db->update('candidate',$data);
 	}
 	public function get_candidate($id){
-		$this->db->where('id',$id);
-		$this->db->from('candidate');
+		$this->db->select('A.*,B.name as event_name');
+		$this->db->where('A.id',$id);
+		$this->db->from('candidate A');
+		$this->db->join('event B','A.event=B.id');
 		return $this->db->get()->row();
 	}
 	public function set_callhis($data){
