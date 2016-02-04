@@ -54,6 +54,7 @@ CREATE TABLE IF NOT EXISTS `candidate` (
 CREATE TABLE IF NOT EXISTS `candidate_status` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
+  `parent` int(11) NOT NULL,
   `user_create` int(11) NOT NULL,
   `date_create` datetime NOT NULL,
   `user_update` int(11) NOT NULL,
@@ -93,7 +94,8 @@ CREATE TABLE IF NOT EXISTS `user` (
   `date_create` datetime NOT NULL,
   `user_update` int(11) NOT NULL,
   `date_update` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 -- Data exporting was unselected.
