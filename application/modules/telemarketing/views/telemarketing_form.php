@@ -233,7 +233,7 @@
  					<table class="table">
 						<tr>
 							<td style="vertical-align:middle">Email</td>
-							<td><?php echo form_input(array('name'=>'email','maxlength'=>'150','class'=>'form-control','size'=>'40','autocomplete'=>'off','value'=>set_value('email',$candidate->email))) ?></td>
+							<td><?php echo form_input(array('id'=>'email','name'=>'email','maxlength'=>'150','class'=>'form-control','size'=>'40','autocomplete'=>'off','value'=>set_value('email',$candidate->email))) ?></td>
 						</tr>
 					</table>					
 
@@ -270,6 +270,12 @@
 				<div class="box-body">
  					<h3>Terima kasih banyak atas waktunya. Semoga hari ini menyenangkan buat anda</h3>
 					<p>(End call) (Kirim Email)</p>
+				</div>				
+				<div class="box-body">
+					<button id="btn-send-email" type="button" class="btn btn-success" onclick="return confirm('Are you sure')">Send Email</button>
+				</div>				
+				<div class="box-footer box-footer-send-email">
+
 				</div>				
 			</div>		
 			<div class="box box-sendemail-tidak hide">
@@ -355,6 +361,28 @@ $(document).ready(function(){
 				}
 			});				
 		}
+	});	
+	$('#btn-send-email').click(function(){
+		$('.box-footer-send-email').html('Loading...');
+		$.ajax({
+			url:'<?php echo base_url() ?>index.php/telemarketing/send_email',
+			type:'post',
+			dataType:'json',
+			data:{
+				id:'<?php echo $candidate->id ?>',
+				to:$('#email').val()
+			},
+			success:function(str){
+				var html = '';
+				if(str['status']==1){
+					html = '<div class="alert alert-success">'+str['result']+'</div>';
+				}else{
+					html = '<div class="alert alert-danger">'+str['result']+'</div>';
+				}	
+				$('.box-footer-send-email').html(html);
+			}
+		});
+		//console.log($('#email').val());
 	});	
 });
 </script>
