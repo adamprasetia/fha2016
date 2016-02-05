@@ -93,7 +93,7 @@
           <ul class="treeview-menu">
             <li class="<?php echo active_menu('doc','4')?>"><?php echo anchor('doc/4','<i class="fa fa-circle-o"></i> FHA 2016')?></li>
             <li class="<?php echo active_menu('doc','5')?>"><?php echo anchor('doc/5','<i class="fa fa-circle-o"></i> Pro Wine 2016')?></li>
-            <li class="<?php echo active_menu('doc','6')?>"><?php echo anchor('doc/6','<i class="fa fa-circle-o"></i> FHA 2016 & Pro Wine 2016')?></li>
+            <li class="<?php echo active_menu('doc','6')?>"><?php echo anchor('doc/6','<i class="fa fa-circle-o"></i> FHA & Pro Wine 2016')?></li>
           </ul>
         </li>                         
       </ul>
