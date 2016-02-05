@@ -325,3 +325,36 @@
 </section>
 <script type="text/javascript" src="<?php echo base_url('assets/js/telemarketing.js') ?>"></script>
 <?php echo form_close() ?>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.btn-callhis').click(function(){
+		$.ajax({
+			url:'<?php echo base_url() ?>index.php/telemarketing/callhis/create',
+			type:'post',
+			data:{
+				status:$(this).attr('value'),
+				candidate:'<?php echo $candidate->id ?>'
+			},
+			success:function(str){
+				$('.box-callhis').html(str);
+			}
+		});
+	});
+
+	$('body').on('click','.btn-callhis-delete',function(){
+		if(confirm('You sure ?')){
+			$.ajax({
+				url:'<?php echo base_url() ?>index.php/telemarketing/callhis/delete',
+				type:'post',
+				data:{
+					id:$(this).attr('value'),
+					candidate:'<?php echo $candidate->id ?>'
+				},
+				success:function(str){
+					$('.box-callhis').html(str);
+				}
+			});				
+		}
+	});	
+});
+</script>
