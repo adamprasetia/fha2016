@@ -86,7 +86,16 @@
         <li class="treeview <?php echo active_menu('export')?>"><?php echo anchor('export','<i class="fa fa-cloud-download"></i> <span>Export Data</span>')?></li>
         <li class="treeview <?php echo active_menu('report')?>"><?php echo anchor('report','<i class="fa fa-bar-chart"></i> <span>Report</span>')?></li>
         <?php endif ?>
-        <li class="treeview <?php echo active_menu('doc')?>"><?php echo anchor('doc','<i class="fa fa-book"></i> <span>Documentation</span>')?></li>
+        <li class="<?php echo active_menu('doc')?> treeview">
+          <a href="#">
+            <i class="fa fa-book"></i> <span>Documentation</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li class="<?php echo active_menu('doc','4')?>"><?php echo anchor('doc/4','<i class="fa fa-circle-o"></i> FHA 2016')?></li>
+            <li class="<?php echo active_menu('doc','5')?>"><?php echo anchor('doc/5','<i class="fa fa-circle-o"></i> Pro Wine 2016')?></li>
+            <li class="<?php echo active_menu('doc','6')?>"><?php echo anchor('doc/6','<i class="fa fa-circle-o"></i> FHA 2016 & Pro Wine 2016')?></li>
+          </ul>
+        </li>                         
       </ul>
     </section>
   </aside>
