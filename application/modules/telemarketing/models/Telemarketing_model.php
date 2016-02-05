@@ -6,10 +6,11 @@ class Telemarketing_model extends CI_Model {
 		$this->db->update('candidate',$data);
 	}
 	public function get_candidate($id){
-		$this->db->select('A.*,B.name as event_name');
+		$this->db->select('A.*,B.name as event_name,C.name as telemarketer');
 		$this->db->where('A.id',$id);
 		$this->db->from('candidate A');
 		$this->db->join('event B','A.event=B.id');
+		$this->db->join('user C','A.telemarketer = C.id','left');
 		return $this->db->get()->row();
 	}
 	public function set_callhis($data){
@@ -28,9 +29,14 @@ class Telemarketing_model extends CI_Model {
 	}
 	public function get(){
 		$this->filter();
-		$this->db->select('A.*,B.name as status_name');
+		$this->db->select('A.*,B.name as status_name,C.name as telemarketer');
 		$this->db->from('candidate A');
 		$this->db->join('candidate_status B','A.status = B.id','left');
+		$this->db->join('user C','A.telemarketer = C.id','left');
+		if($this->user_login['level']==3){
+			$this->db->where('A.telemarketer',$this->user_login['id']);
+			$this->db->where('A.audit','0');			
+		}
 		$this->db->order_by($this->general->get_order_column('A.ID'),$this->general->get_order_type('desc'));
 		$this->db->limit($this->general->get_limit());
 		$this->db->offset($this->general->get_offset());
@@ -39,6 +45,10 @@ class Telemarketing_model extends CI_Model {
 	public function count_all(){
 		$this->filter();
 		$this->db->from('candidate A');
+		if($this->user_login['level']==3){
+			$this->db->where('A.telemarketer',$this->user_login['id']);
+			$this->db->where('A.audit','0');			
+		}
 		return $this->db->get()->num_rows();		
 	}
 	private function filter(){
@@ -46,6 +56,7 @@ class Telemarketing_model extends CI_Model {
 		$status = $this->input->get('status');
 		$search = $this->input->get('search');
 		$event = $this->input->get('event');
+		$telemarketer = $this->input->get('telemarketer');
 		if($status <> ''){
 			$data[] = $this->db->where('A.status',$status);
 		}
@@ -61,13 +72,15 @@ class Telemarketing_model extends CI_Model {
 				A.tlp like "%'.$search.'%")
 			');
 		}
+		if($telemarketer <> ''){
+			$data[] = $this->db->where('A.telemarketer',$telemarketer);
+		}
 		return $data;
 	}
-	public function status_dropdown($tbl_name = '',$caption = ''){
-		$tbl_name = ($tbl_name <> ''?$tbl_name:$this->tbl_name);
+	public function status_dropdown(){
 		$result = $this->db->where('parent',0);
-		$result = $this->db->get($tbl_name)->result();
-		$data[''] = '- '.$caption.' -';
+		$result = $this->db->get('candidate_status')->result();
+		$data[''] = '- Status -';
 		foreach($result as $r){
 			$data[$r->name] = $this->status_detail($r->id);
 		}
@@ -83,4 +96,13 @@ class Telemarketing_model extends CI_Model {
 		return $data;
 
 	}
+	public function telemarketer_dropdown(){
+		$result = $this->db->where('level',3);
+		$result = $this->db->get('user')->result();
+		$data[''] = '- Telemarketer -';
+		foreach($result as $r){
+			$data[$r->id] = $r->name;
+		}
+		return $data;
+	}	
 }

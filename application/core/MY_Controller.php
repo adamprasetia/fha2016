@@ -8,5 +8,6 @@ class MY_Controller extends CI_Controller {
 			redirect('login');
 		}
 		$this->user_login = $this->session->userdata('user_login');
+		//var_dump($this->user_login);exit;
 	}
 }

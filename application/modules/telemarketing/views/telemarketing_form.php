@@ -15,7 +15,15 @@
 	<div class="box">
 		<div class="box-body form-inline">
 			Status : 
-			<?php echo form_dropdown('status',$this->telemarketing_model->status_dropdown('candidate_status','Status'),set_value('status',$candidate->status),'class="form-control"') ?>
+			<?php echo form_dropdown('status',$this->telemarketing_model->status_dropdown(),set_value('status',$candidate->status),'class="form-control"') ?>
+			<div class="pull-right">
+				<div class="checkbox <?php echo ($this->user_login['level']==3?'hide':'') ?>">
+					<label>
+						<?php echo form_checkbox(array('id'=>'audit','name'=>'audit','value'=>'1','checked'=>set_value('audit',($candidate->audit==1?true:false)))) ?>
+						Audit
+					</label>
+				</div>
+			</div>
 			<button class="btn btn-success btn-sm" type="submit" onclick="return confirm('Are you sure')"><span class="glyphicon glyphicon-save"></span> Save</button>
 		</div>	
 	</div>	
@@ -279,6 +287,14 @@
 					<td><?php echo form_input(array('name'=>'note','maxlength'=>'100','class'=>'form-control','autocomplete'=>'off','value'=>set_value('note',$candidate->note))) ?></td>
 				</div>	
 			</div>
+			<div class="box">
+				<div class="box-header">
+					<b>Telemarketer</b>
+				</div>	
+				<div class="box-header">
+					<td><?php echo $candidate->telemarketer ?></td>
+				</div>	
+			</div>			
 			<div class="box">
 				<div class="box-header">
 					<b>Call History</b>

@@ -34,7 +34,7 @@
               <li class="user-header">
                 <p>
                   <?php echo $this->user_login['name'] ?>
-                  <small><?php echo $this->user_login['level'] ?></small>
+                  <small><?php echo $this->user_login['level_name'] ?></small>
                 </p>
               </li>
               <li class="user-footer">
@@ -56,6 +56,7 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview <?php echo active_menu('home')?>"><?php echo anchor('home','<i class="fa fa-home"></i> <span>Home</span>')?></li>
+        <?php if ($this->user_login['level']==1): ?>          
         <li class="<?php echo active_menu('master')?> treeview">
           <a href="#">
             <i class="fa fa-database"></i> <span>Master Data</span> <i class="fa fa-angle-left pull-right"></i>
@@ -75,11 +76,16 @@
             <li class="<?php echo active_menu('user','')?>"><?php echo anchor('user','<i class="fa fa-circle-o"></i> List User')?></li>
           </ul>
         </li>                         
+        <?php endif ?>
+        <?php if ($this->user_login['level']==1 || $this->user_login['level']==2): ?>
         <li class="treeview <?php echo active_menu('import')?>"><?php echo anchor('import','<i class="fa fa-cloud-upload"></i> <span>Import Data</span>')?></li>
         <li class="treeview <?php echo active_menu('distribution')?>"><?php echo anchor('distribution','<i class="fa fa-cubes"></i> <span>Distribution</span>')?></li>
+        <?php endif ?>
         <li class="treeview <?php echo active_menu('telemarketing')?>"><?php echo anchor('telemarketing','<i class="fa fa-phone"></i> <span>Telemarketing</span>')?></li>
+        <?php if ($this->user_login['level']==1 || $this->user_login['level']==2): ?>
         <li class="treeview <?php echo active_menu('export')?>"><?php echo anchor('export','<i class="fa fa-cloud-download"></i> <span>Export Data</span>')?></li>
         <li class="treeview <?php echo active_menu('report')?>"><?php echo anchor('report','<i class="fa fa-bar-chart"></i> <span>Report</span>')?></li>
+        <?php endif ?>
         <li class="treeview <?php echo active_menu('doc')?>"><?php echo anchor('doc','<i class="fa fa-book"></i> <span>Documentation</span>')?></li>
       </ul>
     </section>

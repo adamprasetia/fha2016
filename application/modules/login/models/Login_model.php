@@ -4,7 +4,7 @@ class Login_model extends CI_Model
 {
 	function check_login($username,$password)
 	{
-		$this->db->select('A.id,A.name,B.name as level');
+		$this->db->select('A.id,A.name,A.level,B.name as level_name');
 		$this->db->where('username',$username);
 		$this->db->where('password',$password);
 		$this->db->where('status','1');

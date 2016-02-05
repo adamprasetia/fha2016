@@ -22,7 +22,10 @@
 					<?php echo form_dropdown('event',$this->master_model->dropdown('event','Event'),$this->input->get('event'),'class="form-control input-sm" onchange="submit()"')?>
 				</div>
 				<div class="form-group">
-					<?php echo form_dropdown('status',candidate_status(),$this->input->get('status'),'class="form-control input-sm" onchange="submit()"')?>
+					<?php echo form_dropdown('status',$this->telemarketing_model->status_dropdown(),$this->input->get('status'),'class="form-control input-sm" onchange="submit()"')?>
+				</div>
+				<div class="form-group">
+					<?php echo form_dropdown('telemarketer',$this->telemarketing_model->telemarketer_dropdown(),$this->input->get('telemarketer'),'class="form-control input-sm" onchange="submit()"')?>
 				</div>
 			<?php echo form_close()?>
 			<div class="table-responsive">

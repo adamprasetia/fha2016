@@ -21,7 +21,8 @@ class Telemarketing extends MY_Controller {
 			'company'		=> 'Company Name',
 			'tlp'			=> 'Phone',
 			'status_name'	=> 'Status',
-			'Note'			=> 'Note'
+			'telemarketer'	=> 'Telemarketer',
+			'note'			=> 'Note'
 		);
 		$heading[] = '#';
 		foreach($head_data as $r => $value){
@@ -41,6 +42,7 @@ class Telemarketing extends MY_Controller {
 				$r->company,
 				$r->tlp,			
 				$r->status_name,			
+				$r->telemarketer,			
 				$r->note,			
 				anchor('telemarketing/phone/'.$r->id.get_query_string(),'Phone'.($count_call > 0?' <span class="label label-success">'.$count_call.' <span class="glyphicon glyphicon-earphone"></span></span>':''))
 			);
@@ -65,6 +67,7 @@ class Telemarketing extends MY_Controller {
 			'limit'=>$this->input->post('limit'),
 			'status'=>$this->input->post('status'),
 			'event'=>$this->input->post('event'),
+			'telemarketer'=>$this->input->post('telemarketer')
 		);
 		redirect('telemarketing'.get_query_string($data));		
 	}	
@@ -95,7 +98,8 @@ class Telemarketing extends MY_Controller {
 				'mobile'=>$this->input->post('mobile'),
 				'sendemail'=>$this->input->post('sendemail'),
 				'sendsms'=>$this->input->post('sendsms'),
-				'attend'=>$this->input->post('attend')
+				'attend'=>$this->input->post('attend'),
+				'audit'=>$this->input->post('audit')
 			);
 			$this->telemarketing_model->phone($id,$data);
 			$this->session->set_flashdata('alert','<div class="alert alert-success">Data has been saved</div>');
