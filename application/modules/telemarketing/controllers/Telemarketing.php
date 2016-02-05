@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Telemarketing extends MY_Controller {
+class Telemarketing extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('master/master_model');
@@ -106,4 +106,44 @@ class Telemarketing extends MY_Controller {
 			redirect('telemarketing/phone/'.$id.get_query_string());			
 		}
 	}
+	public function send_email(){
+		$id = $this->input->post('id');
+		$to = $this->input->post('to');
+
+		$config = array(
+			'protocol' => 'smtp',
+			'smtp_host' => 'ssl://smtp.googlemail.com',
+			'smtp_port' => 465,
+			'smtp_user' => 'adam.prasetia@gmail.com', // change it to yours
+			'smtp_pass' => 'azywjidpigwvkxeg', // change it to yours
+			'mailtype' => 'html',
+			'charset' => 'iso-8859-1',
+			'wordwrap' => TRUE
+		);
+		$data['candidate'] = $this->telemarketing_model->get_candidate($id);
+		$subject = '';
+		if($data['candidate']->event==4){
+			$subject = 'Invitation to visit Food&HotelAsia2016';
+		}elseif($data['candidate']->event==5){
+			$subject = 'Invitation to visit ProWine ASIA 2016';
+		}elseif($data['candidate']->event==6){
+			$subject = 'Invitation to visit FHA2016 and ProWine ASIA 2016';
+		}
+
+		$message = $this->load->view('email_'.$data['candidate']->event,$data,true);
+
+		$this->load->library('email', $config);
+		$this->email->set_newline("\r\n");
+		$this->email->from('adam.prasetia@gmail.com'); // change it to yours
+		$this->email->to($to);// change it to yours
+		$this->email->subject($subject);
+		$this->email->message($message);
+		if($this->email->send()){
+			$data = array('status'=>'1','result'=>'Email successfully sent');
+			echo json_encode($data);
+		}else{
+			$data = array('status'=>'0','result'=>'Email fails to be sent');
+			echo json_encode($data);
+		}
+	}	
 }
