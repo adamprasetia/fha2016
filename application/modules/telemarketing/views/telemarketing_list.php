@@ -27,6 +27,11 @@
 				<div class="form-group">
 					<?php echo form_dropdown('telemarketer',$this->telemarketing_model->telemarketer_dropdown(),$this->input->get('telemarketer'),'class="form-control input-sm" onchange="submit()"')?>
 				</div>
+				<div class="form-group">
+					<?php echo form_input(array('name'=>'date_from','placeholder'=>'From','class'=>'form-control input-tanggal','size'=>'10','value'=>$this->input->get('date_from')))?>
+					<?php echo form_input(array('name'=>'date_to','placeholder'=>'To','class'=>'form-control input-tanggal','size'=>'10','value'=>$this->input->get('date_to')))?>
+				</div>
+				<button class="btn btn-primary btn-sm" type="submit"><span class="glyphicon glyphicon-filter"></span> Filter</button>				
 			<?php echo form_close()?>
 			<div class="table-responsive">
 				<?php echo $table?>

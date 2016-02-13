@@ -67,7 +67,9 @@ class Telemarketing extends MY_Controller {
 			'limit'=>$this->input->post('limit'),
 			'status'=>$this->input->post('status'),
 			'event'=>$this->input->post('event'),
-			'telemarketer'=>$this->input->post('telemarketer')
+			'telemarketer'=>$this->input->post('telemarketer'),
+			'date_from'=>$this->input->post('date_from'),
+			'date_to'=>$this->input->post('date_to')
 		);
 		redirect('telemarketing'.get_query_string($data));		
 	}	

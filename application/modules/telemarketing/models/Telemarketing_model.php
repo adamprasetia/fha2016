@@ -62,6 +62,9 @@ class Telemarketing_model extends CI_Model {
 		$status = $this->input->get('status');
 		$search = $this->input->get('search');
 		$event = $this->input->get('event');
+		$date_from = $this->input->get('date_from');
+		$date_to = $this->input->get('date_to');
+
 		$telemarketer = $this->input->get('telemarketer');
 		if($status <> ''){
 			$data[] = $this->db->where('A.status',$status);
@@ -80,7 +83,12 @@ class Telemarketing_model extends CI_Model {
 		}
 		if($telemarketer <> ''){
 			$data[] = $this->db->where('A.telemarketer',$telemarketer);
-		}
+		}		
+		if($date_from <> '' && $date_to <> ''){
+			$data[] = $this->db->where('A.dist_date >=',format_ymd($date_from));
+			$data[] = $this->db->where('A.dist_date <=',format_ymd($date_to));
+		}		
+
 		return $data;
 	}
 	public function status_dropdown(){
