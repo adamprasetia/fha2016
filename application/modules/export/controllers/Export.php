@@ -48,7 +48,10 @@ class Export extends MY_Controller {
 			$active_sheet->setCellValue('M1', 'New Telephone');
 			$active_sheet->setCellValue('N1', 'New Mobile');
 			$active_sheet->setCellValue('O1', 'Email');
-			$active_sheet->setCellValue('P1', 'Distribution Date');
+			$active_sheet->setCellValue('P1', 'Mobile Sms');
+			$active_sheet->setCellValue('Q1', 'Distribution Date');
+			$active_sheet->setCellValue('R1', 'Status');
+			$active_sheet->setCellValue('S1', 'Note');
 			
 			$event 			= $this->input->post('event');
 			$date_from 	= format_ymd($this->input->post('date_from'));
@@ -72,8 +75,11 @@ class Export extends MY_Controller {
 				$active_sheet->setCellValue('M'.$i, $r->tlp_new);
 				$active_sheet->setCellValue('N'.$i, $r->mobile_new);
 				$active_sheet->setCellValue('O'.$i, $r->email);
-				$active_sheet->setCellValue('P'.$i, PHPExcel_Shared_Date::PHPToExcel(date_to_excel($r->dist_date)));
-				$active_sheet->getStyle('P'.$i)->getNumberFormat()->setFormatCode('dd/mm/yyyy');		   
+				$active_sheet->setCellValueExplicit('P'.$i, $r->mobile_sms);
+				$active_sheet->setCellValue('Q'.$i, PHPExcel_Shared_Date::PHPToExcel(date_to_excel($r->dist_date)));
+				$active_sheet->getStyle('Q'.$i)->getNumberFormat()->setFormatCode('dd/mm/yyyy');		   
+				$active_sheet->setCellValue('R'.$i, $r->status_name);
+				$active_sheet->setCellValue('S'.$i, $r->note);
 				$i++;
 			}
 
