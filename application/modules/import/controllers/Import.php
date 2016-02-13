@@ -41,9 +41,11 @@ class Import extends MY_Controller {
 							,'sn'=>trim($active_sheet->getCell('B'.$i)->getValue())
 							,'name'=>trim($active_sheet->getCell('C'.$i)->getValue())
 							,'title'=>trim($active_sheet->getCell('D'.$i)->getValue())
-							,'company'=>trim($active_sheet->getCell('E'.$i)->getValue())
-							,'tlp'=>trim($active_sheet->getCell('F'.$i)->getValue())
-							,'date'=>excel_to_date($active_sheet->getCell('G'.$i))
+							,'dept'=>trim($active_sheet->getCell('E'.$i)->getValue())
+							,'company'=>trim($active_sheet->getCell('F'.$i)->getValue())
+							,'tlp'=>trim($active_sheet->getCell('G'.$i)->getValue())
+							,'mobile'=>trim($active_sheet->getCell('H'.$i)->getValue())
+							,'actcode'=>trim($active_sheet->getCell('I'.$i)->getValue())
 							,'date_create'=>date('Y-m-d H:i:s')
 							,'user_create'=>$this->user_login['id']
 						);
