@@ -30,33 +30,37 @@
 					<tr>
 						<th rowspan='2' style="vertical-align:middle">Event</th>
 						<th rowspan='2' style="vertical-align:middle">Total Proses</th>
-						<th colspan='4'>Connect</th>
+						<th colspan='5'>Connect</th>
 						<th rowspan='2' style="vertical-align:middle">Total Connect</th>
-						<th colspan='3'>Not Connect</th>
+						<th colspan='4'>Not Connect</th>
 						<th rowspan='2' style="vertical-align:middle">Total Not Connect</th>
 						<th rowspan='2' style="vertical-align:middle">Total</th>
 					</tr>
 					<tr>
-						<th>Connect to Candidate</th>
-						<th>Connect to Receptionist</th>
-						<th>Disconnected</th>
+						<th>Attend</th>
+						<th>Consider Attending</th>
+						<th>Not Attend</th>
 						<th>Wrong Number</th>
+						<th>Call Back</th>
 						<th>No Answer</th>
 						<th>Busy</th>
-						<th>Tulalit</th>
+						<th>Reject</th>
+						<th>Foreign Number</th>
 					</tr>
 					<?php foreach ($report_status as $row): ?>
 						<tr>
 							<td><?php echo $row->event ?></td>
 							<td><b><?php echo number_format($row->proses) ?></b></td>
-							<td><?php echo number_format($row->ctc) ?></td>
-							<td><?php echo number_format($row->ctr) ?></td>
-							<td><?php echo number_format($row->dis) ?></td>
+							<td><?php echo number_format($row->att) ?></td>
+							<td><?php echo number_format($row->con_att) ?></td>
+							<td><?php echo number_format($row->not_att) ?></td>
 							<td><?php echo number_format($row->wn) ?></td>
+							<td><?php echo number_format($row->cb) ?></td>
 							<td><b class="label label-success"><?php echo number_format($row->total_c) ?></b></td>
 							<td><?php echo number_format($row->na) ?></td>
 							<td><?php echo number_format($row->bus) ?></td>
-							<td><?php echo number_format($row->tul) ?></td>
+							<td><?php echo number_format($row->rej) ?></td>
+							<td><?php echo number_format($row->fn) ?></td>
 							<td><b class="label label-danger"><?php echo number_format($row->total_n) ?></b></td>
 							<td><b><?php echo number_format($row->total) ?></b></td>
 						</tr>						
