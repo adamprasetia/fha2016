@@ -159,7 +159,16 @@ class Telemarketing extends MY_Controller {
 
 			$this->load->library('email', $config);
 			$this->email->set_newline("\r\n");
-			$this->email->from('no-reply@adirect.web.id'); // change it to yours
+
+			if($data['candidate']->event==4){
+				$from = 'Food&HotelAsia2016';
+			}elseif($data['candidate']->event==5){
+				$from = 'ProWine ASIA 2016';
+			}elseif($data['candidate']->event==6){
+				$from = 'FHA2016 and ProWine ASIA 2016';
+			}
+			$this->email->from('no-reply@adirect.web.id',$from); // change it to yours
+
 			$this->email->to($to);// change it to yours
 			$this->email->subject($subject);
 			$this->email->message($message);
