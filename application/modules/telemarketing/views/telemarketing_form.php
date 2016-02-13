@@ -222,13 +222,13 @@
 							<td><?php echo form_input(array('name'=>'mobile_sms','maxlength'=>'50','class'=>'form-control','size'=>'40','autocomplete'=>'off','value'=>set_value('mobile_sms',$candidate->mobile_sms))) ?></td>
 						</tr>
 					</table>										
-					<h3>Sampai jumpa di acara tersebut!</h3> 
+					<h3>Baik terima kasih atas infonya. Sampai jumpa di acara tersebut! Selamat <?php echo (date('G')<10?'pagi':(date('G')<15?'siang':'sore')) ?>.</h3> 
 					<p>(Selesai)</p>
 				</div>	
 			</div>	
 			<div class="box box-sendsms-tidak hide">
 				<div class="box-body">
-					<h3>Sampai jumpa di acara tersebut!</h3> 
+					<h3>Baik terima kasih atas infonya. Sampai jumpa di acara tersebut! Selamat <?php echo (date('G')<10?'pagi':(date('G')<15?'siang':'sore')) ?>.</h3> 
 					<p>(Selesai)</p>
 				</div>	
 			</div>	
@@ -291,7 +291,7 @@
 			</div>		
 			<div class="box box-sendemail-ya hide">
 				<div class="box-body">
- 					<h3>Terima kasih banyak atas waktunya. Semoga hari ini menyenangkan buat bapak/ibu</h3>
+ 					<h3>Terima kasih banyak atas waktunya. Selamat <?php echo (date('G')<10?'pagi':(date('G')<15?'siang':'sore')) ?>.</h3>
 					<p>(End call) (Kirim Email)</p>
 				</div>				
 				<div class="box-body">
@@ -303,7 +303,7 @@
 			</div>		
 			<div class="box box-sendemail-tidak hide">
 				<div class="box-body">
- 					<h3>Terima kasih banyak atas waktunya. Semoga hari ini menyenangkan buat bapak/ibu</h3>
+ 					<h3>Terima kasih banyak atas waktunya. Selamat <?php echo (date('G')<10?'pagi':(date('G')<15?'siang':'sore')) ?>.</h3>
 				</div>				
 			</div>		
 		</div>
