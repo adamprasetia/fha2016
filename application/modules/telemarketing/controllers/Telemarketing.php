@@ -124,12 +124,22 @@ class Telemarketing extends MY_Controller {
 			$id = $this->input->post('id');
 			$to = $this->input->post('to');
 
-			$config = array(
+			/*$config = array(
 				'protocol' => 'smtp',
 				'smtp_host' => 'ssl://smtp.googlemail.com',
 				'smtp_port' => 465,
 				'smtp_user' => 'adam.prasetia@gmail.com', // change it to yours
 				'smtp_pass' => 'azywjidpigwvkxeg', // change it to yours
+				'mailtype' => 'html',
+				'charset' => 'iso-8859-1',
+				'wordwrap' => TRUE
+			);*/
+			$config = array(
+				'protocol' => 'smtp',
+				'smtp_host' => 'mail.adirect.web.id',
+				'smtp_port' => 25,
+				'smtp_user' => 'no-reply@adirect.web.id', // change it to yours
+				'smtp_pass' => 'n0-reply', // change it to yours
 				'mailtype' => 'html',
 				'charset' => 'iso-8859-1',
 				'wordwrap' => TRUE
