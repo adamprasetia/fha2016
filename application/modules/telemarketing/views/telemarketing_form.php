@@ -139,7 +139,7 @@
 			</div>	
 			<div class="box box-push-tidak hide">
 				<div class="box-body">
-					<h3>Ini tidak akan memakan waktu yang lama. Kami hanya ingin mengetahui apakah anda sudah register untuk event di Bulan April 2016</h3>
+					<h3>Ini tidak akan memakan waktu yang lama. Kami hanya ingin mengetahui apakah bapak/ibu sudah register untuk event di Bulan April 2016</h3>
 					<div class="radio">
 						<label>
 							<?php echo form_radio(array('id'=>'push1','name'=>'push','value'=>'1','checked'=>($candidate->push==1?true:false))) ?>
@@ -157,14 +157,14 @@
 	    			<p>(lanjut ke Pertanyaan berikutnya)</p>
     			</div>
 					<div class="push-tidak-tidak hide">
-	    			<h3>Saya minta maaf sudah menggangu waktu Anda. Kapan kira kira bisa dihubungi kembali?</h3>
+	    			<h3>Saya minta maaf sudah menggangu waktu bapak/ibu. Kapan kira kira bisa dihubungi kembali?</h3>
 	    			<p>(catat tgl, waktu untuk dihubungi)</p>
     			</div>
 				</div>	
 			</div>	
 			<div class="box box-eknow hide">
 				<div class="box-body">
-					<h3>Apakah Anda sudah mengetahui bahwa <b><?php echo $candidate->event_name ?></b> akan diselenggarakan tanggal 12-15 April di Singapore Expo ?</h3>
+					<h3>Apakah bapak/ibu sudah mengetahui bahwa <b><?php echo $candidate->event_name ?></b> akan diselenggarakan tanggal 12-15 April di Singapore Expo ?</h3>
 					<div class="radio">
 						<label>
 							<?php echo form_radio(array('id'=>'eknow1','name'=>'eknow','value'=>'1','checked'=>($candidate->eknow==1?true:false))) ?>
@@ -181,7 +181,7 @@
 			</div>	
 			<div class="box box-eknow-ya hide">
 				<div class="box-body">
-					<h3>Bagus. Sudahkah anda melakukan pra pendaftaran ke <b><?php echo $candidate->event_name ?></b> ?</h3>
+					<h3>Baik. Sudahkah bapak/ibu melakukan pra pendaftaran ke <b><?php echo $candidate->event_name ?></b> ?</h3>
 					<div class="radio">
 						<label>
 							<?php echo form_radio(array('id'=>'register1','name'=>'register','value'=>'1','checked'=>($candidate->register==1?true:false))) ?>
@@ -198,7 +198,7 @@
 			</div>
 			<div class="box box-register-ya hide">
 				<div class="box-body">
-					<h3>Terima kasih atas dukungan dan waktunya. Mohon diingat untuk membawa email konfirmasi Anda untuk koleksi lencana/badge anda. Jika Anda ingin kami mengirimkan reminder/pengingat acara, Anda dapat memberikan nomor ponsel Anda dan kami akan mengirimkan SMS Reminder/pengingat. </h3>					
+					<h3>Terima kasih atas dukungan dan waktunya. Mohon diingat untuk membawa email konfirmasi bapak/ibu untuk koleksi lencana/badge bapak/ibu. Jika bapak/ibu ingin kami mengirimkan reminder/pengingat acara, bapak/ibu dapat memberikan nomor ponsel bapak/ibu dan kami akan mengirimkan SMS Reminder/pengingat. </h3>					
 					<div class="radio">
 						<label>
 							<?php echo form_radio(array('id'=>'sendsms1','name'=>'sendsms','value'=>'1','checked'=>($candidate->sendsms==1?true:false))) ?>
@@ -235,7 +235,7 @@
 			<div class="box box-eknow-tidak hide">
 				<div class="box-body">
 					<p>(Berikan info tentang <b><?php echo $candidate->event_name ?></b>)</p>
-					<h3>Dapatkah saya kirimkan email kepada Anda undangan untuk menghadiri <b><?php echo $candidate->event_name ?></b> bersama dengan informasi acara dan link ke pra-pendaftaran secara online ?</h3>
+					<h3>Dapatkah saya kirimkan email kepada bapak/ibu undangan untuk menghadiri <b><?php echo $candidate->event_name ?></b> bersama dengan informasi acara dan link ke pra-pendaftaran secara online ?</h3>
 					<div class="radio">
 						<label>
 							<?php echo form_radio(array('id'=>'sendemail1','name'=>'sendemail','value'=>'1','checked'=>($candidate->sendemail==1?true:false))) ?>
@@ -260,15 +260,15 @@
 						</tr>
 					</table>					
 
-					<h3>Jika Anda tertarik untuk mengunjungi acara, silakan lakukan pra-pendaftaran kunjungan Anda secara online di www.foodnhotelasia.com sebelum 31 Maret 2016. </h3>
+					<h3>Jika bapak/ibu tertarik untuk mengunjungi acara, silakan lakukan pra-pendaftaran kunjungan bapak/ibu secara online di www.foodnhotelasia.com sebelum 31 Maret 2016. </h3>
 					<h3>Jika tidak, akan ada biaya masuk sebesar SGD 80 untuk pendaftaran onsite (di tempat acara).</h3>
-					<h3>Apakah juga membawa rekan Anda dan teman-teman di industri untuk pertunjukan karena saya yakin bahwa itu akan relevan dan bermanfaat bagi pekerjaan mereka juga. Rekan Anda juga harus melakukan pra-pendaftaran secara online untuk menikmati tiket masuk gratis ke pameran.</h3>
-					<h3>Harap menyimpan email yang akan saya kirimkan kepada Anda segera.</h3>
+					<h3>Apakah juga membawa rekan bapak/ibu dan teman-teman di industri untuk pertunjukan karena saya yakin bahwa itu akan relevan dan bermanfaat bagi pekerjaan mereka juga. Rekan bapak/ibu juga harus melakukan pra-pendaftaran secara online untuk menikmati tiket masuk gratis ke pameran.</h3>
+					<h3>Harap menyimpan email yang akan saya kirimkan kepada bapak/ibu segera.</h3>
 				</div>				
 			</div>		
 			<div class="box box-attend hide">
 				<div class="box-body">
-					<h3>Jadi apakah anda akan meluangkan waktu untuk mengahadiri <b><?php echo $candidate->event_name ?></b> ?</h3>
+					<h3>Jadi apakah bapak/ibu akan meluangkan waktu untuk mengahadiri <b><?php echo $candidate->event_name ?></b> ?</h3>
 					<div class="radio">
 						<label>
 							<?php echo form_radio(array('id'=>'attend1','name'=>'attend','value'=>'1','checked'=>($candidate->attend==1?true:false))) ?>
@@ -291,7 +291,7 @@
 			</div>		
 			<div class="box box-sendemail-ya hide">
 				<div class="box-body">
- 					<h3>Terima kasih banyak atas waktunya. Semoga hari ini menyenangkan buat anda</h3>
+ 					<h3>Terima kasih banyak atas waktunya. Semoga hari ini menyenangkan buat bapak/ibu</h3>
 					<p>(End call) (Kirim Email)</p>
 				</div>				
 				<div class="box-body">
@@ -303,7 +303,7 @@
 			</div>		
 			<div class="box box-sendemail-tidak hide">
 				<div class="box-body">
- 					<h3>Terima kasih banyak atas waktunya. Semoga hari ini menyenangkan buat anda</h3>
+ 					<h3>Terima kasih banyak atas waktunya. Semoga hari ini menyenangkan buat bapak/ibu</h3>
 				</div>				
 			</div>		
 		</div>
