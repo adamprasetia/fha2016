@@ -75,6 +75,7 @@
 									Priority
 								</div>	
 								<div class="panel-body">
+									<p><b><?php echo $priority->name ?></b></p>
 									<?php echo $priority->priority ?>
 								</div>
 							</div>

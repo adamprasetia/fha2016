@@ -16,8 +16,12 @@ class Report_model extends CI_Model {
 			sum(if(A.status in (21,22,23),1,0)) as total_n,
 			sum(if(A.id is not null,1,0)) as total
 		');
-		$this->db->from('candidate A');
+		$this->db->from('candidate A');		
 		$this->db->join('event B','A.event=B.id');
+		if($this->input->get('date_from') <> '' && $this->input->get('date_to') <> ''){
+			$this->db->where('A.dist_date >=',format_ymd($this->input->get('date_from')));
+			$this->db->where('A.dist_date <=',format_ymd($this->input->get('date_to')));
+		}		
 		$this->db->group_by('event');
 		return $this->db->get()->result();
 	}

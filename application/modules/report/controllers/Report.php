@@ -14,7 +14,9 @@ class Report extends MY_Controller {
 	}
 	public function search(){
 		$data = array(
-			'event'=>$this->input->post('event')
+			'event'=>$this->input->post('event'),
+			'date_from'=>$this->input->post('date_from'),
+			'date_to'=>$this->input->post('date_to')
 		);
 		redirect('report'.get_query_string($data));		
 	}	

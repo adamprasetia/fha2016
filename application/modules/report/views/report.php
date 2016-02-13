@@ -13,8 +13,8 @@
 			<?php echo form_open($action,array('class'=>'form-inline'))?>
 				<div class="form-group">
 					Date : 
-					<?php echo form_input(array('name'=>'date_from','class'=>'form-control input-tanggal','size'=>'10'))?>
-					<?php echo form_input(array('name'=>'date_to','class'=>'form-control input-tanggal','size'=>'10'))?>
+					<?php echo form_input(array('name'=>'date_from','class'=>'form-control input-tanggal','size'=>'10','value'=>$this->input->get('date_from')))?>
+					<?php echo form_input(array('name'=>'date_to','class'=>'form-control input-tanggal','size'=>'10','value'=>$this->input->get('date_to')))?>
 					<button class="btn btn-primary btn-sm" type="submit"><span class="glyphicon glyphicon-filter"></span> Filter</button>
 				</div>
 			<?php echo form_close()?>
