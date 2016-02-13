@@ -9,8 +9,8 @@ class Export_model extends CI_Model {
 			$this->db->where('A.event',$event);			
 		}
 		if($date_from <> '0000-00-00' && $date_to <> '0000-00-00'){
-			$this->db->where('A.date >=',$date_from);
-			$this->db->where('A.date <=',$date_to);
+			$this->db->where('A.dist_date >=',$date_from);
+			$this->db->where('A.dist_date <=',$date_to);
 		}	
 		return $this->db->get();
 	}

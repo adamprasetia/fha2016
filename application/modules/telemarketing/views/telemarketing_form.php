@@ -36,28 +36,50 @@
 				<div class="box-body">
 					<h3>Selamat <?php echo (date('G')<10?'pagi':(date('G')<15?'siang':'sore')) ?>. Nama saya <b><?php echo $this->user_login['name'] ?></b> dan saya mewakili <b>Singapore Exhibitions Services</b>, penyelenggara <b><?php echo $candidate->event_name ?></b> di Singapura.</h3>
 					<h3>Bisakah saya berbicara dengan ?</h3>
-					<table class="table">
-						<tr>
-							<td width="200">Name of Target Contact</td>
-							<td><?php echo $candidate->name ?></td>
-						</tr>
-						<tr>
-							<td>Job Title</td>
-							<td><?php echo $candidate->title ?></td>
-						</tr>
-						<tr>
-							<td>Company</td>
-							<td><?php echo $candidate->company ?></td>
-						</tr>
-						<tr>
-							<td>Tel / DID</td>
-							<td><?php echo $candidate->tlp ?></td>
-						</tr>
-						<tr>
-							<td>New Contact</td>
-							<td><?php echo form_checkbox(array('id'=>'new_contact','name'=>'new_contact','value'=>'1','checked'=>set_value('new_contact',($candidate->new_contact==1?true:false)))) ?></td>
-						</tr>
-					</table>
+					<div class="row">
+						<div class="col-md-8">
+							<table class="table">
+								<tr>
+									<td width="200">Name of Target Contact</td>
+									<td><?php echo $candidate->name ?></td>
+								</tr>
+								<tr>
+									<td>Job Title</td>
+									<td><?php echo $candidate->title ?></td>
+								</tr>
+								<tr>
+									<td>Departement</td>
+									<td><?php echo $candidate->dept ?></td>
+								</tr>
+								<tr>
+									<td>Company</td>
+									<td><?php echo $candidate->company ?></td>
+								</tr>
+								<tr>
+									<td>Tel / DID</td>
+									<td><?php echo $candidate->tlp ?></td>
+								</tr>
+								<tr>
+									<td>Mobile</td>
+									<td><?php echo $candidate->mobile ?></td>
+								</tr>
+								<tr>
+									<td>New Contact</td>
+									<td><?php echo form_checkbox(array('id'=>'new_contact','name'=>'new_contact','value'=>'1','checked'=>set_value('new_contact',($candidate->new_contact==1?true:false)))) ?></td>
+								</tr>
+							</table>
+						</div>	
+						<div class="col-md-4">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									Priority
+								</div>	
+								<div class="panel-body">
+									<?php echo $priority->priority ?>
+								</div>
+							</div>
+						</div>	
+					</div>	
 					<table class="table table-new-contact hide">
 						<tr>
 							<th colspan=2>New Target Contact :</th>
@@ -71,12 +93,12 @@
 							<td><?php echo form_input(array('name'=>'title_new','maxlength'=>'100','class'=>'form-control','size'=>'40','autocomplete'=>'off','value'=>set_value('title_new',$candidate->title_new))) ?></td>
 						</tr>
 						<tr>
-							<td>Company</td>
-							<td><?php echo form_input(array('name'=>'company_new','maxlength'=>'100','class'=>'form-control','size'=>'40','autocomplete'=>'off','value'=>set_value('company_new',$candidate->company_new))) ?></td>
-						</tr>
-						<tr>
 							<td>Tel / DID</td>
 							<td><?php echo form_input(array('name'=>'tlp_new','maxlength'=>'50','class'=>'form-control','size'=>'25','autocomplete'=>'off','value'=>set_value('tlp_new',$candidate->tlp_new))) ?></td>
+						</tr>
+						<tr>
+							<td>Mobile</td>
+							<td><?php echo form_input(array('name'=>'mobile_new','maxlength'=>'50','class'=>'form-control','size'=>'25','autocomplete'=>'off','value'=>set_value('mobile_new',$candidate->mobile_new))) ?></td>
 						</tr>
 					</table>					
 				</div>	
@@ -196,7 +218,7 @@
 					<table class="table">
 						<tr>
 							<td style="vertical-align:middle">Mobile Phone</td>
-							<td><?php echo form_input(array('name'=>'mobile','maxlength'=>'50','class'=>'form-control','size'=>'40','autocomplete'=>'off','value'=>set_value('mobile',$candidate->mobile))) ?></td>
+							<td><?php echo form_input(array('name'=>'mobile_sms','maxlength'=>'50','class'=>'form-control','size'=>'40','autocomplete'=>'off','value'=>set_value('mobile_sms',$candidate->mobile_sms))) ?></td>
 						</tr>
 					</table>										
 					<h3>Sampai jumpa di acara tersebut!</h3> 

@@ -34,13 +34,21 @@ class Export extends MY_Controller {
 
 			//header
 			$active_sheet->setCellValue('A1', 'No');
-			$active_sheet->setCellValue('B1', 'Serial Number');
-			$active_sheet->setCellValue('C1', 'Name of Contacts');
-			$active_sheet->setCellValue('D1', 'Job Title');
-			$active_sheet->setCellValue('E1', 'Company');
-			$active_sheet->setCellValue('F1', 'Telephone');
-			$active_sheet->setCellValue('G1', 'Date');
-			$active_sheet->setCellValue('H1', 'Event');
+			$active_sheet->setCellValue('B1', 'Event');
+			$active_sheet->setCellValue('C1', 'Serial Number');
+			$active_sheet->setCellValue('D1', 'Name of Contacts');
+			$active_sheet->setCellValue('E1', 'Job Title');
+			$active_sheet->setCellValue('F1', 'Departement');
+			$active_sheet->setCellValue('G1', 'Company');
+			$active_sheet->setCellValue('H1', 'Telephone');
+			$active_sheet->setCellValue('I1', 'Mobile');
+			$active_sheet->setCellValue('J1', 'Actcode');
+			$active_sheet->setCellValue('K1', 'New Name');
+			$active_sheet->setCellValue('L1', 'New Title');
+			$active_sheet->setCellValue('M1', 'New Telephone');
+			$active_sheet->setCellValue('N1', 'New Mobile');
+			$active_sheet->setCellValue('O1', 'Email');
+			$active_sheet->setCellValue('P1', 'Distribution Date');
 			
 			$event 			= $this->input->post('event');
 			$date_from 	= format_ymd($this->input->post('date_from'));
@@ -50,14 +58,22 @@ class Export extends MY_Controller {
 			$i=2;
 			foreach($result as $r){
 				$active_sheet->setCellValue('A'.$i, $i-1);
-				$active_sheet->setCellValueExplicit('B'.$i, $r->sn);
-				$active_sheet->setCellValue('C'.$i, $r->name);
-				$active_sheet->setCellValue('D'.$i, $r->title);
-				$active_sheet->setCellValue('E'.$i, $r->company);
-				$active_sheet->setCellValueExplicit('F'.$i, $r->tlp);
-				$active_sheet->setCellValue('G'.$i, PHPExcel_Shared_Date::PHPToExcel(date_to_excel($r->date)));
-				$active_sheet->getStyle('G'.$i)->getNumberFormat()->setFormatCode('dd/mm/yyyy');		   
-				$active_sheet->setCellValue('H'.$i, $r->event_name);
+				$active_sheet->setCellValue('B'.$i, $r->event_name);
+				$active_sheet->setCellValueExplicit('C'.$i, $r->sn);
+				$active_sheet->setCellValue('D'.$i, $r->name);
+				$active_sheet->setCellValue('E'.$i, $r->title);
+				$active_sheet->setCellValue('F'.$i, $r->dept);
+				$active_sheet->setCellValue('G'.$i, $r->company);
+				$active_sheet->setCellValueExplicit('H'.$i, $r->tlp);
+				$active_sheet->setCellValueExplicit('I'.$i, $r->mobile);
+				$active_sheet->setCellValue('J'.$i, $r->actcode);
+				$active_sheet->setCellValue('K'.$i, $r->name_new);
+				$active_sheet->setCellValue('L'.$i, $r->title_new);
+				$active_sheet->setCellValue('M'.$i, $r->tlp_new);
+				$active_sheet->setCellValue('N'.$i, $r->mobile_new);
+				$active_sheet->setCellValue('O'.$i, $r->email);
+				$active_sheet->setCellValue('P'.$i, PHPExcel_Shared_Date::PHPToExcel(date_to_excel($r->dist_date)));
+				$active_sheet->getStyle('P'.$i)->getNumberFormat()->setFormatCode('dd/mm/yyyy');		   
 				$i++;
 			}
 

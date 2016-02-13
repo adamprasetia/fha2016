@@ -5,12 +5,18 @@ class Telemarketing_model extends CI_Model {
 		$this->db->where('id',$id);
 		$this->db->update('candidate',$data);
 	}
+	public function get_priority($event,$code){
+		$this->db->from('actcode A');
+		$this->db->where('A.event',$event);
+		$this->db->where('A.code',$code);
+		return $this->db->get()->row();
+	}
 	public function get_candidate($id){
 		$this->db->select('A.*,B.name as event_name,C.name as telemarketer');
-		$this->db->where('A.id',$id);
 		$this->db->from('candidate A');
 		$this->db->join('event B','A.event=B.id');
 		$this->db->join('user C','A.telemarketer = C.id','left');
+		$this->db->where('A.id',$id);
 		return $this->db->get()->row();
 	}
 	public function set_callhis($data){

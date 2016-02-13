@@ -5,7 +5,7 @@ class Distribution_model extends CI_Model {
 		$this->filter();
 		$this->db->where('A.telemarketer','0');
 		$this->db->limit($total);
-		$this->db->update('candidate A',array('A.telemarketer'=>$telemarketer));
+		$this->db->update('candidate A',array('A.telemarketer'=>$telemarketer,'dist_date'=>date('Y-m-d')));
 		return $this->db->affected_rows();
 	}	
 	function get_telemarketer(){
@@ -61,17 +61,11 @@ class Distribution_model extends CI_Model {
 	}	
 	function filter(){
 		$event 			= $this->input->get('event');
-		$date_from 		= format_ymd($this->input->get('date_from'));
-		$date_to 		= format_ymd($this->input->get('date_to'));
 
 		$data = array();
 		if($event <> ''){
 			$data[] = $this->db->where('A.event',$event);			
 		}
-		if($date_from <> '0000-00-00' && $date_to <> '0000-00-00'){
-			$data[] = $this->db->where('A.date >=',$date_from);
-			$data[] = $this->db->where('A.date <=',$date_to);
-		}	
 		return $data;
 	}
 }

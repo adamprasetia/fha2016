@@ -75,6 +75,7 @@ class Telemarketing extends MY_Controller {
 		$this->form_validation->set_rules('status','Status','trim');
 		if($this->form_validation->run()===false){
 			$xdata['candidate'] 	= $this->telemarketing_model->get_candidate($id);
+			$xdata['priority'] 	= $this->telemarketing_model->get_priority($xdata['candidate']->event,$xdata['candidate']->actcode);
 			$xdata['breadcrumb']	= 'telemarketing'.get_query_string();
 			$xdata['callhis']		= $this->telemarketing_model->get_call($id);
 			$xdata['action']		= 'telemarketing/phone/'.$id.get_query_string();
@@ -86,8 +87,9 @@ class Telemarketing extends MY_Controller {
 				'new_contact'=>$this->input->post('new_contact'),
 				'name_new'=>$this->input->post('name_new'),
 				'title_new'=>$this->input->post('title_new'),
-				'company_new'=>$this->input->post('company_new'),
 				'tlp_new'=>$this->input->post('tlp_new'),
+				'mobile_new'=>$this->input->post('mobile_new'),
+				'mobile_sms'=>$this->input->post('mobile_sms'),
 				'note'=>$this->input->post('note'),
 				'called'=>$this->input->post('called'),
 				'fminute'=>$this->input->post('fminute'),
@@ -95,7 +97,6 @@ class Telemarketing extends MY_Controller {
 				'eknow'=>$this->input->post('eknow'),
 				'register'=>$this->input->post('register'),
 				'email'=>$this->input->post('email'),
-				'mobile'=>$this->input->post('mobile'),
 				'sendemail'=>$this->input->post('sendemail'),
 				'sendsms'=>$this->input->post('sendsms'),
 				'attend'=>$this->input->post('attend'),

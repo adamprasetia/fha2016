@@ -16,12 +16,7 @@
 			<div class="form-group form-inline">
 				<?php echo form_label('Event','event',array('class'=>'control-label'))?>
 				<?php echo form_dropdown('event',$this->master_model->dropdown('event','Event'),set_value('event',$this->input->get('event')),'class="form-control"')?>
-			</div>			
-			<div class="form-group form-inline">
-				<?php echo form_label('Date','date',array('class'=>'control-label'))?>
-				<?php echo form_input(array('name'=>'date_from','class'=>'form-control input-tanggal','size'=>'10','value'=>set_value('date_from',$this->input->get('date_from'))))?>
-				<?php echo form_input(array('name'=>'date_to','class'=>'form-control input-tanggal','size'=>'10','value'=>set_value('date_to',$this->input->get('date_to'))))?>
-			</div>			
+			</div>
 		</div>
 		<div class="box-footer">
 			<button class="btn btn-primary btn-sm" type="submit"><span class="glyphicon glyphicon-refresh"></span> Calculate</button>
