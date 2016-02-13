@@ -75,8 +75,8 @@
 									Priority
 								</div>	
 								<div class="panel-body">
-									<p><b><?php echo $priority->name ?></b></p>
-									<?php echo $priority->priority ?>
+									<p><b><?php echo (isset($priority->name)?$priority->name:'') ?></b></p>
+									<?php echo (isset($priority->priority)?$priority->priority:'') ?>
 								</div>
 							</div>
 						</div>	
