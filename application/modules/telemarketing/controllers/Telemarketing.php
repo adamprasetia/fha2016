@@ -137,7 +137,9 @@ class Telemarketing extends MY_Controller {
 			$config = array(
 				'protocol' => 'smtp',
 				'smtp_host' => 'mail.adirect.web.id',
-				'smtp_port' => 25,
+				'smtp_port' => '25',
+				'smtp_timeout' => '30',
+				'newline' => "\r\n",
 				'smtp_user' => 'no-reply@adirect.web.id', // change it to yours
 				'smtp_pass' => 'n0-reply', // change it to yours
 				'mailtype' => 'html',
