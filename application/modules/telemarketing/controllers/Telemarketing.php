@@ -141,8 +141,7 @@ class Telemarketing extends MY_Controller {
 				'smtp_user' => 'no-reply@adirect.web.id', // change it to yours
 				'smtp_pass' => 'n0-reply', // change it to yours
 				'mailtype' => 'html',
-				'charset' => 'iso-8859-1',
-				'wordwrap' => TRUE
+				'charset' => 'utf-8'
 			);
 			$data['candidate'] = $this->telemarketing_model->get_candidate($id);
 			$subject = '';
@@ -158,7 +157,7 @@ class Telemarketing extends MY_Controller {
 
 			$this->load->library('email', $config);
 			$this->email->set_newline("\r\n");
-			$this->email->from('adam.prasetia@gmail.com'); // change it to yours
+			$this->email->from('no-reply@adirect.web.id'); // change it to yours
 			$this->email->to($to);// change it to yours
 			$this->email->subject($subject);
 			$this->email->message($message);
