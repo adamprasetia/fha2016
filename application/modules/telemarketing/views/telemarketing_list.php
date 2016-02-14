@@ -8,9 +8,9 @@
 	</ol>
 </section>
 <section class="content">
+	<?php echo form_open($action,array('class'=>'form-inline'))?>
 	<div class="box box-default">
 		<div class="box-body">
-			<?php echo form_open($action,array('class'=>'form-inline'))?>
 				<div class="form-group">
 					<?php echo form_label('Show entries','limit')?>
 					<?php echo form_dropdown('limit',array('10'=>'10','50'=>'50','100'=>'100'),set_value('limit',$this->input->get('limit')),'onchange="submit()" class="form-control input-sm"')?> 
@@ -27,12 +27,21 @@
 				<div class="form-group">
 					<?php echo form_dropdown('telemarketer',$this->telemarketing_model->telemarketer_dropdown(),$this->input->get('telemarketer'),'class="form-control input-sm" onchange="submit()"')?>
 				</div>
+		</div>		
+	</div>		
+	<div class="box box-default">
+		<div class="box-body">
 				<div class="form-group">
-					<?php echo form_input(array('name'=>'date_from','placeholder'=>'From','class'=>'form-control input-tanggal','size'=>'10','value'=>$this->input->get('date_from')))?>
-					<?php echo form_input(array('name'=>'date_to','placeholder'=>'To','class'=>'form-control input-tanggal','size'=>'10','value'=>$this->input->get('date_to')))?>
+					Distribution Date : 
+					<?php echo form_input(array('name'=>'date_from','placeholder'=>'From','class'=>'form-control input-sm input-tanggal','size'=>'10','value'=>$this->input->get('date_from')))?>
+					<?php echo form_input(array('name'=>'date_to','placeholder'=>'To','class'=>'form-control input-sm input-tanggal','size'=>'10','value'=>$this->input->get('date_to')))?>
 				</div>
 				<button class="btn btn-primary btn-sm" type="submit"><span class="glyphicon glyphicon-filter"></span> Filter</button>				
-			<?php echo form_close()?>
+		</div>		
+	</div>		
+	<?php echo form_close()?>
+	<div class="box box-default">
+		<div class="box-body">
 			<div class="table-responsive">
 				<?php echo $table?>
 			</div>
