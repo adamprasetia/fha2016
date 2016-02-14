@@ -12,44 +12,44 @@
 	<div class="table-responsive">
 		<table class="table">
 			<tr>
-				<td width="200">About FHA2016</td>
+				<td width="200">Tentang FHA2016</td>
 				<td>
-					<p>Food&HotelAsia2016 (FHA2016) is Asia's leading and most comprehensive international food and hospitality trade event.</p>
-					<p>It will be held from 12 - 15 April 2016 at the Singapore Expo.</p>
-					<p>FHA2016 has 6 specialised events namely FoodAsia, HotelAsia, SpecialityCoffee&Tea, Bakery&Pastry, HospitalityStyleAsia and HospitalityTechnology.</p>
+					<p>Food & HotelAsia2016 (FHA2016) adalah acara makanan dan perhotelan perdagangan paling komprehensif terkemuka di Asia dan Internasional.</p>
+					<p>Ini akan diselenggarakan dari  tanggal <b>12-15 April 2016</b> di Singapore Expo.</p>
+					<p>FHA2016 ada 6 acara khusus yaitu FoodAsia, HotelAsia, khusus Coffee Tea, Bakery Pastry, HospitalityStyleAsia  dan Hospitality Technology.</p>
 				</td>
 			</tr>
 			<tr>
-				<td>Benefits and Highlights of the Event</td>
+				<td>Manfaat dan Highlights dari acara tersebut</td>
 				<td>
-					<p>- 97,000 sqm of exhibition area with more than 3,000 exhibitors from 70 countries/regions and 60 international group pavilions.</p>
-					<p>- Over 68,000 trade attendees from more than 90 countries/regions are expected to be there.</p>
-					<p>- A number of competitions including FHA Culinary Challenge with a new Sweet High Tea Challenge segment, FHA Barista Challenge, Asian Pastry Cup, and the first-ever CTI Latte Art Duel @ FHA.</p>
-					<p>- A host of conferences and fringe activities is available for your participation.</p>
-					<p>- New highlights of the show include the Halal Supermarket at FHA2016 and the Recommended Self-guided Trails.</p>
+					<p>- 97.000 meter persegi area pameran dengan lebih dari 3.000 peserta dari 70 negara / wilayah dan 60 paviliun kelompok internasional.</p>
+					<p>- Lebih dari 68.000 peserta perdagangan dari lebih dari 90 negara / daerah tersebut diharapkan untuk berada di sana.</p>
+					<p>- Sejumlah kompetisi termasuk FHA Kuliner Tantangan dengan segmen manis High Tea Tantangan baru, FHA Barista Challenge, Piala Pastry Asia, dan pertama kalinya CTI Latte Art Duel @ FHA.</p>
+					<p>- Sejumlah konferensi dan kegiatan pinggiran yang tersedia untuk partisipasi Anda.</p>
+					<p>- Highlights New acara termasuk Supermarket Halal di FHA2016 dan Jalur Self-dipandu Recommended.</p>
 				</td>
 			</tr>			
 			<tr>
-				<td>Date and Time of Event</td>
+				<td>Tanggal dan Waktu Event</td>
 				<td>
-					<p>Date: 12 – 15 April 2016, Tuesday - Friday</p>
-					<p>Opening Hours: 10am - 6pm (12 - 14 April), 10am - 4pm (15 April)</p>
-					<p>Venue: Singapore Expo, Hall 1 - 9 Annex</p>
+					<p>Tanggal: 12 - 15 April 2016, Selasa - Jumat</p>
+					<p>Jam Buka: 10:00-18:00 (12-14 April), 10:00-16:00 (15 April)</p>
+					<p>Tempat: Singapore Expo Hall 1 – 9 Annex</p>
 				</td>
 			</tr>			
 			<tr>
-				<td>How to Register ?</td>
+				<td>Bagaimana cara Registrasi ?</td>
 				<td>
-					<p>Pre-Registration to Visit the Exhibition – Free Admission if online pre-registration is completed before 31 March 2016 </p>
-					<p>Go to www.foodnhotelasia.com/pre-registration and submit the form. </p>
-					<p>Confirmation letter will be sent via email. </p>
-					<p>Bring the confirmation email on the day of visit to collect admission badge.</p>
-					<p>On-site Registration to Visit the Exhibition – SGD 80 admission fee Proceed to the Visitor Registration Area to purchase an admission ticket.</p>
-					<p>Complete the questionnaire on the admission ticket and proceed to the counter for registration.</p>
-					<p>Register for FHA2016 International Conference Separate registration is required. Visit www.foodnhotelasia.com to find out more.<p>
-					<p>Date: 12 – 15 April 2016, Tuesday - Friday</p>
-					<p>Opening Hours: 10am - 6pm (12 - 14 April), 10am - 4pm (15 April)</p>
-					<p>Venue: Singapore Expo, Hall 1 - 9 Annex</p>
+					<p>Pra-Pendaftaran untuk Kunjungi Pameran - Pendaftaran gratis jika secara online Pra-pendaftaran selesai sebelum 31 Maret 2016</p>
+					<p>Kunjungi <b>www.foodnhotelasia.com/pre-registration</b> dan submit formulir.</p>
+					<p>Surat konfirmasi akan dikirimkan melalui email.</p>
+					<p>Mohon dibawa email konfirmasi pada hari kunjungan untuk dapat mengumpulkan masuk lencana/badge.</p>
+
+					<p>Pendaftaran di tempat acara Pameran dikenakan biaya masuk <b>SGD 80</b> </p>
+					<p>Lanjutkan ke Pendaftaran di Area pengunjung untuk membeli tiket masuk.</p>
+					<p>Lengkapi kuesioner pada tiket masuk dan melanjutkan ke meja pendaftaran.</p>
+
+					<p>Pendaftaran untuk FHA2016 Konferensi Internasional, pendaftarannya terpisah. Kunjungi www.foodnhotelasia.com untuk mengetahui lebih lanjut.</p>
 				</td>
 			</tr>			
 		</table>

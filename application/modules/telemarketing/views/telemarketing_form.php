@@ -9,26 +9,26 @@
 	  <li class="active">Telemarketing</li>
 	</ol>
 </section>
-<?php echo form_open($action) ?>
 <section class="content">
 <?php echo $this->session->flashdata('alert')?>
-	<div class="box">
-		<div class="box-body form-inline">
-			Status : 
-			<?php echo form_dropdown('status',$this->telemarketing_model->status_dropdown(),set_value('status',$candidate->status),'class="form-control"') ?>
-			<div class="pull-right">
-				<div class="checkbox <?php echo ($this->user_login['level']==3?'hide':'') ?>">
-					<label>
-						<?php echo form_checkbox(array('id'=>'audit','name'=>'audit','value'=>'1','checked'=>set_value('audit',($candidate->audit==1?true:false)))) ?>
-						Audit
-					</label>
-				</div>
-			</div>
-			<button class="btn btn-success btn-sm" type="submit" onclick="return confirm('Are you sure')"><span class="glyphicon glyphicon-save"></span> Save</button>
-		</div>	
-	</div>	
 	<div class="row">
+		<?php echo form_open($action) ?>
 		<div class="col-md-8 col-sm-8">
+			<div class="box">
+				<div class="box-body form-inline">
+					Status : 
+					<?php echo form_dropdown('status',$this->telemarketing_model->status_dropdown(),set_value('status',$candidate->status),'class="form-control"') ?>
+					<div class="pull-right">
+						<div class="checkbox <?php echo ($this->user_login['level']==3?'hide':'') ?>">
+							<label>
+								<?php echo form_checkbox(array('id'=>'audit','name'=>'audit','value'=>'1','checked'=>set_value('audit',($candidate->audit==1?true:false)))) ?>
+								Audit
+							</label>
+						</div>
+					</div>
+					<button class="btn btn-success btn-sm" type="submit" onclick="return confirm('Are you sure')"><span class="glyphicon glyphicon-save"></span> Save</button>
+				</div>	
+			</div>	
 			<div class="box">
 				<div class="box-header">
 					<b>Phone Script</b>
@@ -307,15 +307,8 @@
 				</div>				
 			</div>		
 		</div>
+		<?php echo form_close() ?>
 		<div class="col-md-4 col-sm-4">
-			<div class="box">
-				<div class="box-header">
-					<b>Note</b>
-				</div>	
-				<div class="box-header">
-					<td><?php echo form_input(array('name'=>'note','maxlength'=>'100','class'=>'form-control','autocomplete'=>'off','value'=>set_value('note',$candidate->note))) ?></td>
-				</div>	
-			</div>
 			<div class="box">
 				<div class="box-header">
 					<b>Telemarketer</b>
@@ -347,15 +340,38 @@
 				<div class="box-footer">
 					<button type="button" class="btn btn-success btn-xs btn-callhis" value="Answer">Answer</button>
 					<button type="button" class="btn btn-warning btn-xs btn-callhis" value="No Answer">No Answer</button>
+					<button type="button" class="btn btn-default btn-xs btn-callhis" value="Busy">Busy</button>
+					<button type="button" class="btn btn-danger btn-xs btn-callhis" value="Reject">Reject</button>
+				</div>	
+				<div class="box-footer">
+					<input id="note" type="text" name="note" maxlength="50" class="form-control" placeholder="note..." autocomplete="off">
 				</div>	
 			</div>	
 		</div>
 	</div>	
 </section>
 <script type="text/javascript" src="<?php echo base_url('assets/js/telemarketing.js') ?>"></script>
-<?php echo form_close() ?>
 <script type="text/javascript">
 $(document).ready(function(){
+	$('#note').keyup(function(e){
+	    if(e.keyCode == 13 && $(this).val() != ''){	        
+					$.ajax({
+						url:'<?php echo base_url() ?>index.php/telemarketing/callhis/create',
+						type:'post',
+						data:{
+							status:$(this).val(),
+							candidate:'<?php echo $candidate->id ?>'
+						},
+						success:function(str){
+							$('.box-callhis').html(str);							
+						}
+					});
+				$(this).val('');
+	    }else{
+				console.log('Note is Emptry');
+	    }
+	});
+
 	$('.btn-callhis').click(function(){
 		$.ajax({
 			url:'<?php echo base_url() ?>index.php/telemarketing/callhis/create',
@@ -405,7 +421,6 @@ $(document).ready(function(){
 				$('.box-footer-send-email').html(html);
 			}
 		});
-		//console.log($('#email').val());
 	});	
 });
 </script>

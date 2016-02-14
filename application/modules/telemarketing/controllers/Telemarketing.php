@@ -5,6 +5,7 @@ class Telemarketing extends MY_Controller {
 		parent::__construct();
 		$this->load->model('master/master_model');
 		$this->load->model('telemarketing_model');
+		$this->load->model('callhis_model');
 	}
 	public function index(){
 		$offset = $this->general->get_offset();
@@ -43,7 +44,7 @@ class Telemarketing extends MY_Controller {
 				$r->tlp,			
 				$r->status_name,			
 				$r->telemarketer,			
-				$r->note,			
+				$this->callhis_model->get_note($r->id),
 				anchor('telemarketing/phone/'.$r->id.get_query_string(),'Phone'.($count_call > 0?' <span class="label label-success">'.$count_call.' <span class="glyphicon glyphicon-earphone"></span></span>':''))
 			);
 		}
@@ -92,7 +93,6 @@ class Telemarketing extends MY_Controller {
 				'tlp_new'=>$this->input->post('tlp_new'),
 				'mobile_new'=>$this->input->post('mobile_new'),
 				'mobile_sms'=>$this->input->post('mobile_sms'),
-				'note'=>$this->input->post('note'),
 				'called'=>$this->input->post('called'),
 				'fminute'=>$this->input->post('fminute'),
 				'push'=>$this->input->post('push'),

@@ -12,47 +12,44 @@
 	<div class="table-responsive">
 		<table class="table">
 			<tr>
-				<td width="200">About FHA2016 and ProWine ASIA 2016</td>
+				<td width="200">Tentang FHA2016 and ProWine ASIA 2016</td>
 				<td>
-					<p>Food&HotelAsia2016 is powered by 6 specialised events namely FoodAsia, HotelAsia, SpecialityCoffee&Tea, Bakery&Pastry, HospitalityStyleAsia and HospitalityTechnology. </p>
-					<p>Together with the first-ever ProWine ASIA 2016 - the international trade fair for wines and spirits, this is Asia's leading and most comprehensive international F&B, wine and hospitality trade event in this region.</p>
+					<p>Food&HotelAsia2016 didukung oleh 6 acara khusus yaitu FoodAsia, HotelAsia, SpecialityCoffee&Tea, Bakery&Pastry, HospitalityStyleAsia and HospitalityTechnology. </p>
+					<p>Bersama-sama dengan yang pertama kalinya ProWine ASIA 2016 - perdagangan internasional yang adil untuk wines and spirits, ini adalah Asia terkemuka dan paling komprehensif F & B, wine dan perhotelan acara perdagangan internasional di wilayah ini.</p>
 				</td>
 			</tr>
 			<tr>
-				<td>Benefits and Highlights of the Event</td>
+				<td>Manfaat dan Highlights dari acara tersebut</td>
 				<td>
-					<p>- 100,500 sqm of exhibition area with 3,350 exhibitors from 70 countries/regions and 66 international group pavilions.<b>Key highlights</b></p>
-					<p>- Over 68,000 trade attendees from more than 90 countries/regions are expected to be there.</p>
-					<p>- A number of competitions including FHA Culinary Challenge with a new Sweet High Tea Challenge segment, FHA Barista Challenge, Asian Pastry Cup, and the first-ever CTI Latte Art Duel @ FHA.</p>
-					<p>- A host of conferences and fringe activities at FHA2016 is available for your participation.</p>
-					<p>- New highlights at FHA2016 include the Halal Supermarket and the Recommended Self-guided Trails.</p>
-					<p>- At ProWine ASIA 2016, you can source from a wide range of wineries and varietals from over 20 countries, as well as attend a series of interactive and educational masterclasses and wine tasting sessions.</p>
+					<p>- 100.500 meter persegi area pameran dengan 3.350 peserta dari 70 negara / wilayah dan 66 paviliun internasional. <b> highlights Key </b></p>
+					<p>- Lebih dari 68.000 peserta perdagangan dari lebih dari 90 negara / daerah tersebut diharapkan untuk berada di sana.</p>
+					<p>- Sejumlah kompetisi termasuk FHA Kuliner Tantangan dengan new Sweet High Tea Challenge segment, FHA Barista Challenge, Asian Pastry Cup, and the first-ever CTI Latte Art Duel @ FHA.</p>
+					<p>- Sejumlah konferensi dan kegiatan pinggiran di FHA 2016 yang tersedia untuk partisipasi Anda.</p>
+					<p>- highlights baru di FHA 2016 meliputi Halal Supermarket and the Recommended Self-guided Trails.</p>
+					<p>- Pada ProWine ASIA 2016, Anda dapat sumber dari berbagai perkebunan anggur dan bervariasi dari lebih dari 20 negara, serta menghadiri serangkaian masterclasses interaktif dan pendidikan dan sesi mencicipi anggur.</p>
 				</td>
 			</tr>
 			<tr>
 				<td>Date and Time of Event</td>
 				<td>
-					<p>Date: 12 – 15 April 2016, Tuesday - Friday</p>
-					<p>Opening Hours: 10am – 6pm (12 – 14 April), 10am – 4pm (15 April)</p>
-					<p>Venue: Singapore Expo Hall 1 – 9 Annex (FHA2016) Hall 10 (ProWine ASIA 2016)</p>
+					<p>Tanggal: 12 - 15 April 2016, Selasa - Jumat</p>
+					<p>Jam Buka: 10:00-18:00 (12-14 April), 10:00-16:00 (15 April)</p>
+					<p>Tempat: Singapore Expo Hall 1 – 9 Annex (FHA2016) Hall 10 (ProWine ASIA 2016)</p>
 				</td>
 			</tr>
 			<tr>
 				<td>How to Register ?</td>
 				<td>
-<p>Pre-Registration to Visit the Exhibition – Free Admission if online pre-registration is completed before 31 March 2016</p>
+					<p>Pra-Pendaftaran untuk Kunjungi Pameran - Pendaftaran gratis jika secara online Pra-pendaftaran selesai sebelum 31 Maret 2016</p>
+					<p>Kunjungi <b>www.prowineasia.com/pre-registration</b> dan submit formulir.</p>
+					<p>Surat konfirmasi akan dikirimkan melalui email.</p>
+					<p>Mohon dibawa email konfirmasi pada hari kunjungan untuk dapat mengumpulkan masuk lencana/badge.</p>
 
-<p>Go to www.prowineasia.com/pre-registration and submit the form. </p>
+					<p>Pendaftaran di tempat acara Pameran dikenakan biaya masuk <b>SGD 80</b> </p>
+					<p>Lanjutkan ke Pendaftaran di Area pengunjung untuk membeli tiket masuk.</p>
+					<p>Lengkapi kuesioner pada tiket masuk dan melanjutkan ke meja pendaftaran.</p>
 
-<p>Confirmation letter will be sent via email. </p>
-
-<p>Bring the confirmation email on the day of visit to collect admission badge.</p>
-
-<p>On-site Registration to Visit the Exhibition – SGD 80 admission fee Proceed to the Visitor Registration Area to purchase an admission ticket.</p>
-
-<p>Complete the questionnaire on the admission ticket and proceed to the counter for registration.</p>
-
-<p>Register for FHA2016 International Conference / ProWine ASIA masterclasses and seminars Separate registration is required. Visit www.foodnhotelasia.com / www.prowineasia.com to find out more.</p>
+					<p>Daftar FHA2016 International Conference / masterclasses ProWine ASIA dan seminar pendaftaran terpisah diperlukan. Kunjungi www.foodnhotelasia.com / www.prowineasia.com untuk mengetahui lebih lanjut.</p>
 				</td>
 			</tr>
 		</table>

@@ -10,7 +10,7 @@
 
 <p>business opportunities in one single platform.New highlights of the show include the Halal Supermarket at FHA2016 and the Recommended Self-guided Trails.</p>
 
-<p>Simply pre-register your visit via www.foodnhotelasia.com/pre-registrationbefore 31 March 2016 to enjoy waiver of the SGD80 admission fee.</p>
+<p>Simply pre-register your visit via www.foodnhotelasia.com/pre-registration before 31 March 2016 to enjoy waiver of the SGD80 admission fee.</p>
 
 <p>Please click on this link to view the FHA2016 brochure.</p>
 
