@@ -38,7 +38,7 @@ class Telemarketing extends MY_Controller {
 			$this->table->add_row(
 				$i++,
 				anchor('telemarketing/phone/'.$r->id.get_query_string(),$r->sn).($r->audit==1?' <span class="label label-primary">Audit</span>':''),
-				$r->name,
+				$r->name.'&nbsp;'.($r->email_status<>0?'<span class="label label-'.($r->email_status==1?'success':'danger').'"><span class="glyphicon glyphicon-envelope"></span></span>':''),
 				$r->title,
 				$r->company,
 				$r->tlp,			
@@ -175,8 +175,10 @@ class Telemarketing extends MY_Controller {
 			$this->email->subject($subject);
 			$this->email->message($message);
 			if($this->email->send()){
+				$this->telemarketing_model->phone($id,array('email_status'=>'1'));
 				$data = array('status'=>'1','result'=>'Email successfully sent');
 			}else{
+				$this->telemarketing_model->phone($id,array('email_status'=>'2'));
 				$data = array('status'=>'0','result'=>'Email fails to be sent');
 			}
 			echo json_encode($data);

@@ -41,7 +41,7 @@
 				<td>How to Register ?</td>
 				<td>
 					<p>Pra-Pendaftaran untuk Kunjungi Pameran - Pendaftaran gratis jika secara online Pra-pendaftaran selesai sebelum 31 Maret 2016</p>
-					<p>Kunjungi <b>www.prowineasia.com/pre-registration</b> dan submit formulir.</p>
+					<p>Kunjungi <b>www.foodnhotelasia.com/pre-registration</b> atau <b>sesallworld.com/prowine-asia/pre-registration</b> lalu submit formulir.</p>
 					<p>Surat konfirmasi akan dikirimkan melalui email.</p>
 					<p>Mohon dibawa email konfirmasi pada hari kunjungan untuk dapat mengumpulkan masuk lencana/badge.</p>
 
