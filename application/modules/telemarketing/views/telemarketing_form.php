@@ -260,7 +260,7 @@
 						</tr>
 					</table>					
 
-					<h3>Jika bapak/ibu tertarik untuk mengunjungi acara, silakan lakukan pra-pendaftaran kunjungan bapak/ibu secara online di www.foodnhotelasia.com sebelum 31 Maret 2016. </h3>
+					<h3>Jika bapak/ibu tertarik untuk mengunjungi acara, silakan lakukan pra-pendaftaran kunjungan bapak/ibu secara online di <?php echo ($candidate->event==4?'www.foodnhotelasia.com':($candidate->event==5?'www.prowineasia.com':'www.foodnhotelasia.com atau www.prowineasia.com')) ?> sebelum 31 Maret 2016. </h3>
 					<h3>Jika tidak, akan ada biaya masuk sebesar SGD 80 untuk pendaftaran onsite (di tempat acara).</h3>
 					<h3>Apakah juga membawa rekan bapak/ibu dan teman-teman di industri untuk pertunjukan karena saya yakin bahwa itu akan relevan dan bermanfaat bagi pekerjaan mereka juga. Rekan bapak/ibu juga harus melakukan pra-pendaftaran secara online untuk menikmati tiket masuk gratis ke pameran.</h3>
 					<h3>Harap menyimpan email yang akan saya kirimkan kepada bapak/ibu segera.</h3>
