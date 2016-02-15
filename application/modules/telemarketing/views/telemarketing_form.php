@@ -283,7 +283,7 @@
 					</div>
 					<div class="radio">
 						<label>
-							<?php echo form_radio(array('id'=>'attend2','name'=>'attend','value'=>'2','checked'=>($candidate->attend==3?true:false))) ?>
+							<?php echo form_radio(array('id'=>'attend3','name'=>'attend','value'=>'3','checked'=>($candidate->attend==3?true:false))) ?>
 							Ragu-ragu
 						</label>
 					</div>
