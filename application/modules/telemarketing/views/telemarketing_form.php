@@ -255,20 +255,20 @@
  					(Minta alamat emailnya)
  					<table class="table">
 						<tr>
-							<td style="vertical-align:middle">Email</td>
+							<td style="vertical-align:middle">Email <?php echo ($candidate->email_status<>0?'<span class="label label-'.($candidate->email_status==1?'success':'danger').'"><span class="glyphicon glyphicon-envelope"></span></span>':'') ?></td>
 							<td><?php echo form_input(array('id'=>'email','name'=>'email','maxlength'=>'150','class'=>'form-control','size'=>'40','autocomplete'=>'off','value'=>set_value('email',$candidate->email))) ?></td>
 						</tr>
 					</table>					
 
-					<h3>Jika bapak/ibu tertarik untuk mengunjungi acara, silakan lakukan pra-pendaftaran kunjungan bapak/ibu secara online di <?php echo ($candidate->event==4?'www.foodnhotelasia.com':($candidate->event==5?'www.prowineasia.com':'www.foodnhotelasia.com atau www.prowineasia.com')) ?> sebelum 31 Maret 2016. </h3>
+					<h3>Jika bapak/ibu tertarik untuk mengunjungi acara, silakan lakukan pra-pendaftaran secara online di <?php echo ($candidate->event==4?'www.foodnhotelasia.com':($candidate->event==5?'www.prowineasia.com':'www.foodnhotelasia.com atau www.prowineasia.com')) ?> sebelum 31 Maret 2016. </h3>
 					<h3>Jika tidak, akan ada biaya masuk sebesar SGD 80 untuk pendaftaran onsite (di tempat acara).</h3>
-					<h3>Apakah juga membawa rekan bapak/ibu dan teman-teman di industri untuk pertunjukan karena saya yakin bahwa itu akan relevan dan bermanfaat bagi pekerjaan mereka juga. Rekan bapak/ibu juga harus melakukan pra-pendaftaran secara online untuk menikmati tiket masuk gratis ke pameran.</h3>
+					<h3>Apakah bapak/ibu juga membawa rekan dan teman-teman di industri untuk datang, karena saya yakin bahwa itu akan relevan dan bermanfaat bagi pekerjaan mereka juga. Rekan bapak/ibu juga harus melakukan pra-pendaftaran secara online untuk menikmati tiket masuk gratis ke pameran.</h3>
 					<h3>Harap menyimpan email yang akan saya kirimkan kepada bapak/ibu segera.</h3>
 				</div>				
 			</div>		
 			<div class="box box-attend hide">
 				<div class="box-body">
-					<h3>Jadi apakah bapak/ibu akan meluangkan waktu untuk mengahadiri <b><?php echo $candidate->event_name ?></b> ?</h3>
+					<h3>Jadi apakah bapak/ibu akan meluangkan waktu untuk menghadiri <b><?php echo $candidate->event_name ?></b> ?</h3>
 					<div class="radio">
 						<label>
 							<?php echo form_radio(array('id'=>'attend1','name'=>'attend','value'=>'1','checked'=>($candidate->attend==1?true:false))) ?>

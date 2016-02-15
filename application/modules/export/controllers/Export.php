@@ -6,6 +6,7 @@ class Export extends MY_Controller {
 		parent::__construct();
 		$this->load->model('master/master_model');
 		$this->load->model('export_model');
+		$this->load->model('telemarketing/callhis_model');
 	}
 	public function index(){
 		$data['content'] = $this->load->view('export','',true);
@@ -51,7 +52,7 @@ class Export extends MY_Controller {
 			$active_sheet->setCellValue('P1', 'Mobile Sms');
 			$active_sheet->setCellValue('Q1', 'Distribution Date');
 			$active_sheet->setCellValue('R1', 'Status');
-			$active_sheet->setCellValue('S1', 'Note');
+			$active_sheet->setCellValue('S1', 'Call History');
 			
 			$event 			= $this->input->post('event');
 			$date_from 	= format_ymd($this->input->post('date_from'));
@@ -72,14 +73,14 @@ class Export extends MY_Controller {
 				$active_sheet->setCellValue('J'.$i, $r->actcode);
 				$active_sheet->setCellValue('K'.$i, $r->name_new);
 				$active_sheet->setCellValue('L'.$i, $r->title_new);
-				$active_sheet->setCellValue('M'.$i, $r->tlp_new);
-				$active_sheet->setCellValue('N'.$i, $r->mobile_new);
+				$active_sheet->setCellValueExplicit('M'.$i, $r->tlp_new);
+				$active_sheet->setCellValueExplicit('N'.$i, $r->mobile_new);
 				$active_sheet->setCellValue('O'.$i, $r->email);
 				$active_sheet->setCellValueExplicit('P'.$i, $r->mobile_sms);
 				$active_sheet->setCellValue('Q'.$i, PHPExcel_Shared_Date::PHPToExcel(date_to_excel($r->dist_date)));
 				$active_sheet->getStyle('Q'.$i)->getNumberFormat()->setFormatCode('dd/mm/yyyy');		   
 				$active_sheet->setCellValue('R'.$i, $r->status_name);
-				$active_sheet->setCellValue('S'.$i, $r->note);
+				$active_sheet->setCellValue('S'.$i, $this->callhis_model->get_note($r->id));
 				$i++;
 			}
 
