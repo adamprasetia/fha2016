@@ -12,7 +12,7 @@
 
 <p>Seize this perfect opportunity to expand your business network, learn more about wines and spirits, and get advance information on the region’s industry trends at ProWine ASIA 2016.</p>
 
-<p>Simply pre-register your visit via www.prowineasia.com/pre-registration before 31 March 2016 to enjoy waiver of the SGD80 admission fee.</p>
+<p>Simply click <a href="http://sesallworld.com/prowine-asia/pre-registration">here</a> to pre-register your visit before 31 March 2016 to enjoy waiver of the SGD80 admission fee.</p>
 
 <p>Should you have further queries, please feel free to email Ms Teo Hui Hui at huihui@sesallworld.com. </p>
 
