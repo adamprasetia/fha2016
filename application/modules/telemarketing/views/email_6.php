@@ -8,7 +8,7 @@
 
 <p>Occupying 100,500 sqmof exhibition area, 3,350 exhibitors from 70 countries/regions and 66 international group pavilions will be showcasing their newly launched and best-selling products and services. Over 68,000 trade attendees from more than 90 countries/regions are also expected to be present.</p>
 
-<p>Simply pre-register your visit via www.foodnhotelasia.com/pre-registration or www.prowineasia.com/pre-registration before 31 March 2016 to enjoy waiver of the SGD80 admission fee.</p>
+<p>Simply pre-register your visit via www.foodnhotelasia.com/pre-registration or  www.sesallworld.com/prowine-asia/pre-registration before 31 March 2016 to enjoy waiver of the SGD80 admission fee.</p>
 
 <p>Should you have further queries, please feel free to email Ms Desyanti Tan at desyanti.tan@sesallworld.com. </p>
 

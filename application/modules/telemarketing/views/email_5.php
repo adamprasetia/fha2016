@@ -10,7 +10,7 @@
 
 <p>Besides being able to source from around the globe in one convenient location, ProWine ASIA 2016 will feature a series of educational and interactive masterclasses and seminars. You can look forward to enhancing your knowledge on Austria wines, Italian wines, Provence wines, Spanish wines and Sake, as well as engaging with industry experts from Decanter and Wine & Spirit Education Trust (WSET).</p>
 
-<p>Seize this perfect opportunity to expand your business network, learn more about wines and spirits, and get advance information on the region’s industry trends at ProWine ASIA 2016.</p>
+<p>Seize this perfect opportunity to expand your business network, learn more about wines and spirits, and get advance information on the region's industry trends at ProWine ASIA 2016.</p>
 
 <p>Simply click <a href="http://sesallworld.com/prowine-asia/pre-registration">here</a> to pre-register your visit before 31 March 2016 to enjoy waiver of the SGD80 admission fee.</p>
 
