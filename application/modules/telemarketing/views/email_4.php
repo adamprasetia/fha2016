@@ -1,4 +1,4 @@
-<p>Dear <?php echo $candidate->name ?></p>
+<p>Dear <?php echo ($candidate->name_new<>''?$candidate->name_new:$candidate->name) ?></p>
 
 <p>Thank you for your time on the phone with me a moment ago.</p>
 <p>We would like to invite youand your colleagues and friends from the industry to visit Food&HotelAsia2016 (FHA2016) which will be held from 12 - 15 April 2016 at Singapore Expo, Hall 1 - 9 Annex.</p>

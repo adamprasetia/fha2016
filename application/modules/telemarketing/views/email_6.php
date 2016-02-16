@@ -1,4 +1,4 @@
-<p>Dear <?php echo $candidate->name ?></p>
+<p>Dear <?php echo ($candidate->name_new<>''?$candidate->name_new:$candidate->name) ?></p>
 
 <p>Thank you for your time on the phone with me a moment ago.</p>
 
