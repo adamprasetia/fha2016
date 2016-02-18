@@ -37,7 +37,7 @@ class Telemarketing extends MY_Controller {
 			$count_call = $this->telemarketing_model->count_call($r->id);
 			$this->table->add_row(
 				$i++,
-				anchor('telemarketing/phone/'.$r->id.get_query_string(),$r->sn).($r->audit==1?' <span class="label label-primary">Audit</span>':''),
+				anchor('telemarketing/phone/'.$r->id.get_query_string(),$r->sn).($r->valid==1?' <span class="label label-success">Valid</span>':'').($r->audit==1?' <span class="label label-primary">Audit</span>':''),
 				$r->name.'&nbsp;'.($r->email_status<>0?'<span class="label label-'.($r->email_status==1?'success':'danger').'"><span class="glyphicon glyphicon-envelope"></span></span>':''),
 				$r->title,
 				$r->company,
@@ -70,7 +70,9 @@ class Telemarketing extends MY_Controller {
 			'event'=>$this->input->post('event'),
 			'telemarketer'=>$this->input->post('telemarketer'),
 			'date_from'=>$this->input->post('date_from'),
-			'date_to'=>$this->input->post('date_to')
+			'date_to'=>$this->input->post('date_to'),
+			'valid'=>$this->input->post('valid'),
+			'audit'=>$this->input->post('audit')
 		);
 		redirect('telemarketing'.get_query_string($data));		
 	}	
@@ -102,7 +104,8 @@ class Telemarketing extends MY_Controller {
 				'sendemail'=>$this->input->post('sendemail'),
 				'sendsms'=>$this->input->post('sendsms'),
 				'attend'=>$this->input->post('attend'),
-				'audit'=>$this->input->post('audit')
+				'audit'=>$this->input->post('audit'),
+				'valid'=>$this->input->post('valid')
 			);
 			$this->telemarketing_model->phone($id,$data);
 			$this->session->set_flashdata('alert','<div class="alert alert-success">Data has been saved</div>');

@@ -36,6 +36,18 @@
 					<?php echo form_input(array('name'=>'date_from','placeholder'=>'From','class'=>'form-control input-sm input-tanggal','size'=>'10','value'=>$this->input->get('date_from')))?>
 					<?php echo form_input(array('name'=>'date_to','placeholder'=>'To','class'=>'form-control input-sm input-tanggal','size'=>'10','value'=>$this->input->get('date_to')))?>
 				</div>
+				<div class="checkbox">
+					<label>
+						<?php echo form_checkbox(array('id'=>'valid','name'=>'valid','value'=>'1','checked'=>set_value('valid',($this->input->get('valid')==1?true:false)))) ?>
+						Valid
+					</label>
+				</div>
+				<div class="checkbox <?php echo ($this->user_login['level']==3?'hide':'') ?>">
+					<label>
+						<?php echo form_checkbox(array('id'=>'audit','name'=>'audit','value'=>'1','checked'=>set_value('audit',($this->input->get('audit')==1?true:false)))) ?>
+						Audit
+					</label>
+				</div>
 				<button class="btn btn-primary btn-sm" type="submit"><span class="glyphicon glyphicon-filter"></span> Filter</button>				
 		</div>		
 	</div>		

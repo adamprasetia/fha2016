@@ -64,6 +64,8 @@ class Telemarketing_model extends CI_Model {
 		$event = $this->input->get('event');
 		$date_from = $this->input->get('date_from');
 		$date_to = $this->input->get('date_to');
+		$valid = $this->input->get('valid');
+		$audit = $this->input->get('audit');
 
 		$telemarketer = $this->input->get('telemarketer');
 		if($status <> ''){
@@ -87,6 +89,12 @@ class Telemarketing_model extends CI_Model {
 		if($date_from <> '' && $date_to <> ''){
 			$data[] = $this->db->where('A.dist_date >=',format_ymd($date_from));
 			$data[] = $this->db->where('A.dist_date <=',format_ymd($date_to));
+		}		
+		if($valid <> ''){
+			$data[] = $this->db->where('A.valid',$valid);
+		}		
+		if($audit <> ''){
+			$data[] = $this->db->where('A.audit',$audit);
 		}		
 
 		return $data;

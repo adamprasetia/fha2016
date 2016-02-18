@@ -19,6 +19,12 @@
 					Status : 
 					<?php echo form_dropdown('status',$this->telemarketing_model->status_dropdown(),set_value('status',$candidate->status),'class="form-control"') ?>
 					<div class="pull-right">
+						<div class="checkbox <?php echo ($this->user_login['level']==2?'hide':'') ?>">
+							<label>
+								<?php echo form_checkbox(array('id'=>'valid','name'=>'valid','value'=>'1','checked'=>set_value('valid',($candidate->valid==1?true:false)))) ?>
+								Valid
+							</label>
+						</div>
 						<div class="checkbox <?php echo ($this->user_login['level']==3?'hide':'') ?>">
 							<label>
 								<?php echo form_checkbox(array('id'=>'audit','name'=>'audit','value'=>'1','checked'=>set_value('audit',($candidate->audit==1?true:false)))) ?>
