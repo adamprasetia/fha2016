@@ -323,21 +323,24 @@
 					<td><?php echo $candidate->telemarketer ?></td>
 				</div>	
 			</div>			
-			<div class="box">
+			<div class="box callhis-wrap">
 				<div class="box-header">
 					<b>Call History</b>
 				</div>	
 				<div class="box-body box-callhis">
 					<table class="table table-responsive">
 						<tr>
+							<th>No</th>
 							<th>Date</th>
 							<th>Remark</th>
 							<th>Action</th>
 						</tr>	
+						<?php $i=1; ?>
 						<?php foreach ($callhis as $row): ?>
 						<tr>
+							<td><?php echo $i++ ?></td>
 							<td><?php echo $row->date ?></td>
-							<td><?php echo $row->status ?></td>
+							<td data-id="<?php echo $row->id ?>" class="btn-callhis-update"><?php echo $row->status ?></td>
 							<td><button type="button" class="btn btn-danger btn-xs btn-callhis-delete" value="<?php echo $row->id ?>">Delete</button></td>
 						</tr>							
 						<?php endforeach ?>
@@ -353,6 +356,26 @@
 					<input id="note" type="text" name="note" maxlength="100" class="form-control" placeholder="note..." autocomplete="off">
 				</div>	
 			</div>	
+			<div class="box callhis-form hide">
+				<div class="box-header">
+					<b>Update Call History</b>
+				</div>	
+				<div class="box-body">
+					<input type="hidden" name="id" id="callhis-id" value="5">
+					<div class="form-group">
+						<?php echo form_label('Date','date',array('class'=>'control-label'))?>
+						<?php echo form_input(array('id'=>'callhis-date','name'=>'date','class'=>'form-control input-sm','maxlength'=>'50','autocomplete'=>'off','value'=>set_value('date',''),'required'=>'required'))?>
+					</div>
+					<div class="form-group">
+						<?php echo form_label('Status','status',array('class'=>'control-label'))?>
+						<?php echo form_input(array('id'=>'callhis-status','name'=>'status','class'=>'form-control input-sm','maxlength'=>'100','autocomplete'=>'off','value'=>set_value('status',''),'required'=>'required'))?>
+					</div>
+				</div>	
+				<div class="box-footer">
+					<button type="button" class="btn btn-success btn-xs btn-callhis-save-update">Save</button>
+					<button type="button" class="btn btn-default btn-xs btn-callhis-cancel-update">Cancel</button>
+				</div>	
+			</div>
 		</div>
 	</div>	
 </section>
@@ -390,6 +413,43 @@ $(document).ready(function(){
 				$('.box-callhis').html(str);
 			}
 		});
+	});
+	$('body').on('click','.btn-callhis-save-update',function(){
+		$('.callhis-form').addClass('hide');
+		$.ajax({
+			url:'<?php echo base_url() ?>index.php/telemarketing/callhis/update',
+			type:'post',
+			data:{
+				id:$('#callhis-id').val(),
+				date:$('#callhis-date').val(),
+				status:$('#callhis-status').val(),
+				candidate:'<?php echo $candidate->id ?>'
+			},
+			success:function(str){
+				$('.box-callhis').html(str);
+			}
+		});				
+		$('.callhis-wrap').removeClass('hide');		
+	});	
+	$('body').on('click','.btn-callhis-cancel-update',function(){
+		$('.callhis-form').addClass('hide');
+		$.ajax({
+			url:'<?php echo base_url() ?>index.php/telemarketing/callhis/get/<?php echo $candidate->id ?>',
+			type:'post',
+			success:function(str){
+				$('.box-callhis').html(str);
+			}
+		});				
+		$('.callhis-wrap').removeClass('hide');
+	});	
+	$('body').on('click','.btn-callhis-update',function(){
+		var date = $(this).parent().children().eq(1).html();
+		var status = $(this).parent().children().eq(2).html();
+		$('#callhis-id').val($(this).attr('data-id'));
+		$('#callhis-date').val(date);
+		$('#callhis-status').val(status);
+		$('.callhis-form').removeClass('hide');
+		$('.callhis-wrap').addClass('hide');
 	});
 
 	$('body').on('click','.btn-callhis-delete',function(){

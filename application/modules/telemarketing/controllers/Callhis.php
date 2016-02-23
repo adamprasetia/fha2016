@@ -15,6 +15,16 @@ class Callhis extends MY_Controller {
 		$this->callhis_model->create($data);
 		$this->get($this->input->post('candidate'));
 	}
+	public function update(){
+		$id = $this->input->post('id');
+		$candidate = $this->input->post('candidate');
+		$data = array(
+			'date'=>$this->input->post('date'),
+			'status'=>$this->input->post('status')
+		);
+		$this->callhis_model->update($id,$data);
+		$this->get($candidate);
+	}
 	public function delete(){
 		$id = $this->input->post('id');
 		$candidate = $this->input->post('candidate');
@@ -25,13 +35,13 @@ class Callhis extends MY_Controller {
 		$result = $this->callhis_model->get($id);
 		$tmpl = array ('table_open' => '<table class="table table-responsive">');
 		$this->table->set_template($tmpl);		
-		$this->table->set_heading('No','Date','Status');
+		$this->table->set_heading('No','Date','Status','Action');
 		$i = 1;
 		foreach ($result as $row) {
 			$this->table->add_row(
 				$i++,
 				$row->date,
-				$row->status,
+				array('data'=>$row->status,'class'=>'btn-callhis-update','data-id'=>$row->id),
 				'<button class="btn btn-danger btn-xs btn-callhis-delete" value="'.$row->id.'">Delete</button>'
 			);
 		}

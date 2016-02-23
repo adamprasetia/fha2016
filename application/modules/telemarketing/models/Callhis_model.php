@@ -4,6 +4,10 @@ class Callhis_model extends CI_Model {
 	public function create($data){
 		$this->db->insert('call_history',$data);		
 	}
+	public function update($id,$data){
+		$this->db->where('id',$id);		
+		$this->db->update('call_history',$data);
+	}
 	public function delete($id){
 		$this->db->where('id',$id);		
 		$this->db->delete('call_history');
