@@ -46,12 +46,14 @@ class Distribution_model extends CI_Model {
 	function clear(){
 		$this->filter();
 		$this->db->where('A.audit','0');
+		$this->db->where('A.valid','0');
 		$this->db->update('candidate A',array('A.telemarketer'=>'0'));
 		return $this->db->affected_rows();
 	}
 	function clear_by_telemarketer($id){
 		$this->filter();
 		$this->db->where('A.audit','0');
+		$this->db->where('A.valid','0');
 		$this->db->where('A.telemarketer',$id);
 		$this->db->update('candidate A',array('A.telemarketer'=>'0'));
 		return $this->db->affected_rows();

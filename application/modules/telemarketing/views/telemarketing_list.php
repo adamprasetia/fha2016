@@ -38,6 +38,12 @@
 				</div>
 				<div class="checkbox">
 					<label>
+						<?php echo form_checkbox(array('id'=>'proses','name'=>'proses','value'=>'1','checked'=>set_value('proses',($this->input->get('proses')==1?true:false)))) ?>
+						Proses
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
 						<?php echo form_checkbox(array('id'=>'valid','name'=>'valid','value'=>'1','checked'=>set_value('valid',($this->input->get('valid')==1?true:false)))) ?>
 						Valid
 					</label>

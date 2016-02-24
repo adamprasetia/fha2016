@@ -72,7 +72,8 @@ class Telemarketing extends MY_Controller {
 			'date_from'=>$this->input->post('date_from'),
 			'date_to'=>$this->input->post('date_to'),
 			'valid'=>$this->input->post('valid'),
-			'audit'=>$this->input->post('audit')
+			'audit'=>$this->input->post('audit'),
+			'proses'=>$this->input->post('proses')
 		);
 		redirect('telemarketing'.get_query_string($data));		
 	}	

@@ -442,15 +442,18 @@ $(document).ready(function(){
 		});				
 		$('.callhis-wrap').removeClass('hide');
 	});	
-	$('body').on('click','.btn-callhis-update',function(){
-		var date = $(this).parent().children().eq(1).html();
-		var status = $(this).parent().children().eq(2).html();
-		$('#callhis-id').val($(this).attr('data-id'));
-		$('#callhis-date').val(date);
-		$('#callhis-status').val(status);
-		$('.callhis-form').removeClass('hide');
-		$('.callhis-wrap').addClass('hide');
-	});
+	
+	<?php if ($this->user_login['level']<>3): ?>
+		$('body').on('click','.btn-callhis-update',function(){
+			var date = $(this).parent().children().eq(1).html();
+			var status = $(this).parent().children().eq(2).html();
+			$('#callhis-id').val($(this).attr('data-id'));
+			$('#callhis-date').val(date);
+			$('#callhis-status').val(status);
+			$('.callhis-form').removeClass('hide');
+			$('.callhis-wrap').addClass('hide');
+		});		
+	<?php endif ?>
 
 	$('body').on('click','.btn-callhis-delete',function(){
 		if(confirm('You sure ?')){
