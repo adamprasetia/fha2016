@@ -28,7 +28,10 @@
 				<h1>Ready distribution : <?php echo $total ?></h1>
 			</div>
 			<div class="pull-right">
-				<h1><?php echo anchor('distribution/clear'.get_query_string(),'Clear All',array('class'=>'btn btn-warning','onclick'=>"return confirm('Are you sure ?')")) ?></h1>
+				<h1>
+					<?php echo anchor('distribution/clear'.get_query_string(),'Clear All',array('class'=>'btn btn-warning','onclick'=>"return confirm('Are you sure ?')")) ?>
+					<?php echo anchor('distribution/clear_callback'.get_query_string(),'Clear for Callback',array('class'=>'btn btn-warning','onclick'=>"return confirm('Are you sure ?')")) ?>
+				</h1>
 			</div>
 		</div>
 	</div>
