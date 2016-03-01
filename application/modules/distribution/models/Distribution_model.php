@@ -60,7 +60,7 @@ class Distribution_model extends CI_Model {
 	}	
 	function clear_callback(){
 		$this->filter();
-		$this->db->where('A.status in(15,21,22)');
+		$this->db->where('A.status in(21,22)');
 		$this->db->update('candidate A',array('A.telemarketer'=>'0','A.valid'=>'0','A.audit'=>'0'));
 		return $this->db->affected_rows();
 	}	
