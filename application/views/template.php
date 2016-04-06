@@ -77,15 +77,6 @@
           </ul>
         </li>                         
         <?php endif ?>
-        <?php if ($this->user_login['level']==1 || $this->user_login['level']==2): ?>
-        <li class="treeview <?php echo active_menu('import')?>"><?php echo anchor('import','<i class="fa fa-cloud-upload"></i> <span>Import Data</span>')?></li>
-        <li class="treeview <?php echo active_menu('distribution')?>"><?php echo anchor('distribution','<i class="fa fa-cubes"></i> <span>Distribution</span>')?></li>
-        <?php endif ?>
-        <li class="treeview <?php echo active_menu('telemarketing')?>"><?php echo anchor('telemarketing','<i class="fa fa-phone"></i> <span>Telemarketing</span>')?></li>
-        <?php if ($this->user_login['level']==1 || $this->user_login['level']==2): ?>
-        <li class="treeview <?php echo active_menu('export')?>"><?php echo anchor('export','<i class="fa fa-cloud-download"></i> <span>Export Data</span>')?></li>
-        <li class="treeview <?php echo active_menu('report')?>"><?php echo anchor('report','<i class="fa fa-bar-chart"></i> <span>Report</span>')?></li>
-        <?php endif ?>
         <li class="<?php echo active_menu('doc')?> treeview">
           <a href="#">
             <i class="fa fa-book"></i> <span>Documentation</span> <i class="fa fa-angle-left pull-right"></i>
@@ -96,6 +87,28 @@
             <li class="<?php echo active_menu('doc','6')?>"><?php echo anchor('doc/6','<i class="fa fa-circle-o"></i> FHA & Pro Wine 2016')?></li>
           </ul>
         </li>                         
+
+        <li class="header">PRE-REG REMINDER</li>
+        <?php if ($this->user_login['level']==1 || $this->user_login['level']==2): ?>
+        <li class="treeview <?php echo active_menu('reminder_import')?>"><?php echo anchor('reminder_import/import','<i class="fa fa-cloud-upload"></i> <span>Import Data</span>')?></li>
+        <li class="treeview <?php echo active_menu('reminder_distribution')?>"><?php echo anchor('reminder_distribution/distribution','<i class="fa fa-cubes"></i> <span>Distribution</span>')?></li>
+        <?php endif ?>
+        <li class="treeview <?php echo active_menu('reminder_telemarketing')?>"><?php echo anchor('reminder_telemarketing/telemarketing','<i class="fa fa-phone"></i> <span>Telemarketing</span>')?></li>
+        <?php if ($this->user_login['level']==1 || $this->user_login['level']==2): ?>
+        <li class="treeview <?php echo active_menu('reminder_export')?>"><?php echo anchor('reminder_export/export','<i class="fa fa-cloud-download"></i> <span>Export Data</span>')?></li>
+        <li class="treeview <?php echo active_menu('reminder_report')?>"><?php echo anchor('reminder_report/report','<i class="fa fa-bar-chart"></i> <span>Report</span>')?></li>
+        <?php endif ?>
+
+        <li class="header">INVITATION</li>
+        <?php if ($this->user_login['level']==1 || $this->user_login['level']==2): ?>
+        <li class="treeview <?php echo active_menu('import')?>"><?php echo anchor('import','<i class="fa fa-cloud-upload"></i> <span>Import Data</span>')?></li>
+        <li class="treeview <?php echo active_menu('distribution')?>"><?php echo anchor('distribution','<i class="fa fa-cubes"></i> <span>Distribution</span>')?></li>
+        <?php endif ?>
+        <li class="treeview <?php echo active_menu('telemarketing')?>"><?php echo anchor('telemarketing','<i class="fa fa-phone"></i> <span>Telemarketing</span>')?></li>
+        <?php if ($this->user_login['level']==1 || $this->user_login['level']==2): ?>
+        <li class="treeview <?php echo active_menu('export')?>"><?php echo anchor('export','<i class="fa fa-cloud-download"></i> <span>Export Data</span>')?></li>
+        <li class="treeview <?php echo active_menu('report')?>"><?php echo anchor('report','<i class="fa fa-bar-chart"></i> <span>Report</span>')?></li>
+        <?php endif ?>
       </ul>
     </section>
   </aside>
