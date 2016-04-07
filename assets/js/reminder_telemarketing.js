@@ -68,6 +68,23 @@ $(document).ready(function(){
 		check_fminute();
 	});
 
+	function check_push(){
+		var radio = $('input[type=radio][name=push]:checked').val();
+		if(radio==1){
+			$('.box-attend').removeClass('hide');
+			$('.push-ya').removeClass('hide');
+			$('.push-tidak').addClass('hide');
+		}else if(radio==2){
+			$('.box-attend').addClass('hide');
+			$('.push-ya').addClass('hide');
+			$('.push-tidak').removeClass('hide');
+		}			
+	}
+	check_push();
+	$('input[type=radio][name=push]').change(function(){
+		check_push();
+	});
+
 
 
 	function check_attend(){
