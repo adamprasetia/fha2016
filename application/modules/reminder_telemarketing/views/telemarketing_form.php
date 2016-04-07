@@ -85,7 +85,13 @@
 			</div>		
 			<div class="box box-fminute hide">
 				<div class="box-body">
-					<h3>Nama saya <b><?php echo $this->user_login['name'] ?></b> dan saya mewakili <b>Singapore Exhibitions Services</b> dan <b>MesseDuesseldorf Asia</b>, penyelenggara <b><?php echo $candidate->event_name ?></b> di Singapura.</h3>
+					<?php if ($candidate->event==4): ?>
+						<h3>Nama saya <b><?php echo $this->user_login['name'] ?></b> dan saya mewakili <b>Singapore Exhibitions Services</b>, penyelenggara <b>Food&HotelAsia2016 (FHA2016)</b> di Singapura.</h3>
+					<?php elseif($candidate->event==5): ?>
+						<h3>Nama saya <b><?php echo $this->user_login['name'] ?></b> dan saya mewakili <b>Singapore Exhibitions Services</b> dan <b>MesseDuesseldorf Asia</b>, penyelenggara <b>ProWine ASIA 2016</b> di Singapura.</h3>
+					<?php elseif($candidate->event==6): ?>
+
+					<?php endif ?>
 					<h3>Bisa minta waktunya sebentar ?</h3>
 					<div class="radio">
 						<label>
@@ -109,7 +115,14 @@
 			</div>	
 			<div class="box box-fminute-tidak hide">
 				<div class="box-body">
-					<h3>Ini hanya sebentar dan hanya ingin mengingatkan Anda tentang <b><?php echo $candidate->event_name ?></b> yang berlangsung dari 12-15 April 2016 di Balai 10, Singapore Expo.</h3>
+					<?php if ($candidate->event==4): ?>
+						<h3>Ini hanya sebentar dan hanya ingin mengingatkan Anda tentang <b><?php echo $candidate->event_name ?></b> yang berlangsung dari 12-15 April 2016, Singapore Expo.</h3>
+					<?php elseif($candidate->event==5): ?>
+						<h3>Ini hanya sebentar dan hanya ingin mengingatkan Anda tentang <b><?php echo $candidate->event_name ?></b> yang berlangsung dari 12-15 April 2016 di Hall 10, Singapore Expo.</h3>
+					<?php elseif($candidate->event==6): ?>
+
+					<?php endif ?>
+
 					<p>(Jika responden memberikan indikasi untuk melanjutkan pembicaraan, pergi ke Probing Question. Dari responden menolak, ke callback)</p>
 					<div class="radio">
 						<label>
@@ -152,38 +165,59 @@
 			</div>	
 			<div class="box box-attend-ya hide">
 				<div class="box-body">
-					<h3>Harap diingat untuk membawa email konfirmasi dan kartu bisnis anda untuk 
-				    koleksi lencana di Counter Pre Registered Visitors yang terletak di Hall 10 dari
-				    Singapore Expo.</h3>
-					<h3>Sampai jumpa di acara tersebut, Selamat <?php echo (date('G')<10?'pagi':(date('G')<15?'siang':'sore')) ?></h3>
-				</div>	
-			</div>				
-			<div class="box box-attend-tidak hide">
-				<div class="box-body">
-					<h3>Silakan melakukan proses Pra-pendaftaran di Counter Enquiry yang terletak di 
-					    Hall 10 dari Singapore Expo dengan kartu bisnis Anda untuk mengambil konfirmasi
-					    QR code anda sebelum mengumpulkan badge/lencana masuk Anda di Counter
-					    Pengunjung  Pre-Register.</h3>
-					<h3>Sampai jumpa di acara tersebut, Selamat <?php echo (date('G')<10?'pagi':(date('G')<15?'siang':'sore')) ?></h3>
-				</div>	
-			</div>				
-			<div class="box box-email hide">
-				<div class="box-body">
 					<h3>Baik, Apakah Anda telah menerima email konfirmasi ?</h3>
 					<div class="radio">
 						<label>
-							<?php echo form_radio(array('id'=>'register1','name'=>'register','value'=>'1','checked'=>($candidate->register==1?true:false))) ?>
+							<?php echo form_radio(array('id'=>'email1','name'=>'email','value'=>'1','checked'=>($candidate->email==1?true:false))) ?>
 							Ya
 						</label>
 					</div>				
 					<div class="radio">
 						<label>
-							<?php echo form_radio(array('id'=>'register2','name'=>'register','value'=>'2','checked'=>($candidate->register==2?true:false))) ?>
+							<?php echo form_radio(array('id'=>'email2','name'=>'email','value'=>'2','checked'=>($candidate->email==2?true:false))) ?>
 							Tidak
 						</label>
 					</div>					
 				</div>	
 			</div>			
+			<div class="box box-attend-tidak hide">
+				<div class="box-body">
+					<h3>Terima kasih untuk waktu Anda kami berharap untuk menyambut Anda di edisi berikutnya pada tahun 2018.</h3>
+				</div>	
+			</div>			
+			<div class="box box-email-ya hide">
+				<div class="box-body">
+					<?php if ($candidate->event==4): ?>
+						<h3>Harap diingat untuk membawa email konfirmasi dan kartu bisnis anda untuk 
+					    koleksi lencana di Counter Pre Registered Visitors yang terletak di MAX Atria Gallery (in front of Hall 1) or Hall 9 of Singapore Expo</h3>
+					<?php elseif($candidate->event==5): ?>
+						<h3>Harap diingat untuk membawa email konfirmasi dan kartu bisnis anda untuk 
+					    koleksi lencana di Counter Pre Registered Visitors yang terletak di Hall 10 dari
+					    Singapore Expo.</h3>
+					<?php elseif($candidate->event==6): ?>
+
+					<?php endif ?>
+
+					<h3>Sampai jumpa di acara tersebut, Selamat <?php echo (date('G')<10?'pagi':(date('G')<15?'siang':'sore')) ?></h3>
+				</div>	
+			</div>				
+			<div class="box box-email-tidak hide">
+				<div class="box-body">
+					<?php if ($candidate->event==4): ?>
+					<h3>Silakan melakukan proses Pra-pendaftaran di Counter Enquiry yang terletak di 
+					    MAX Atria Gallery (in front of Hall 1) or Hall 9 of Singapore Expo dengan kartu bisnis Anda untuk mengambil konfirmasi
+					    QR code anda sebelum mengumpulkan badge/lencana masuk Anda di Counter
+					    Pengunjung  Pre-Register.</h3>
+					<?php elseif($candidate->event==5): ?>
+					<h3>Silakan melakukan proses Pra-pendaftaran di Counter Enquiry yang terletak di 
+					    Hall 10 dari Singapore Expo dengan kartu bisnis Anda untuk mengambil konfirmasi
+					    QR code anda sebelum mengumpulkan badge/lencana masuk Anda di Counter
+					    Pengunjung  Pre-Register.</h3>
+					<?php elseif($candidate->event==6): ?>
+					<?php endif ?>
+					<h3>Sampai jumpa di acara tersebut, Selamat <?php echo (date('G')<10?'pagi':(date('G')<15?'siang':'sore')) ?></h3>
+				</div>	
+			</div>				
 		</div>
 		<?php echo form_close() ?>
 		<div class="col-md-4 col-sm-4">

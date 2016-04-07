@@ -95,6 +95,7 @@ class Telemarketing extends MY_Controller {
 				'fminute'=>$this->input->post('fminute'),
 				'push'=>$this->input->post('push'),
 				'attend'=>$this->input->post('attend'),
+				'email'=>$this->input->post('email'),
 				'audit'=>$this->input->post('audit'),
 				'valid'=>$this->input->post('valid')
 			);

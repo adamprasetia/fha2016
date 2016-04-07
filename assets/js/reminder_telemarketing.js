@@ -84,4 +84,20 @@ $(document).ready(function(){
 	$('input[type=radio][name=attend]').change(function(){
 		check_attend();
 	});
+
+	function check_email(){
+		var radio = $('input[type=radio][name=email]:checked').val();
+		if(radio==1){
+			$('.box-email-ya').removeClass('hide');
+			$('.box-email-tidak').addClass('hide');
+		}else if(radio==2){
+			$('.box-email-ya').addClass('hide');
+			$('.box-email-tidak').removeClass('hide');
+		}			
+	}
+	check_email();
+	$('input[type=radio][name=email]').change(function(){
+		check_email();
+	});
+	
 });
