@@ -30,6 +30,7 @@
 			<div class="pull-right">
 				<h1>
 					<?php echo anchor('reminder_distribution/distribution/clear'.get_query_string(),'Clear All',array('class'=>'btn btn-warning','onclick'=>"return confirm('Are you sure ?')")) ?>
+					<?php echo anchor('reminder_distribution/distribution/clear_noans_busy'.get_query_string(),'Clear for Noans/Busy',array('class'=>'btn btn-warning','onclick'=>"return confirm('Are you sure ?')")) ?>
 					<?php echo anchor('reminder_distribution/distribution/clear_callback'.get_query_string(),'Clear for Callback',array('class'=>'btn btn-warning','onclick'=>"return confirm('Are you sure ?')")) ?>
 				</h1>
 			</div>

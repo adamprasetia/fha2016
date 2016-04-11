@@ -45,6 +45,15 @@ class Distribution extends MY_Controller {
 		}
 		redirect('reminder_distribution/distribution'.get_query_string());	
 	}
+	public function clear_noans_busy(){
+		$i = $this->distribution_model->clear_noans_busy();
+		if($i == 0){
+			$this->session->set_flashdata('alert','<div class="alert alert-warning">Warning : None of the data is cleared</div>');
+		}else{
+			$this->session->set_flashdata('alert','<div class="alert alert-success">Success : '.$i.' data has been cleared</div>');
+		}
+		redirect('reminder_distribution/distribution'.get_query_string());			
+	}
 	public function clear_callback(){
 		$i = $this->distribution_model->clear_callback();
 		if($i == 0){

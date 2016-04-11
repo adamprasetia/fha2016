@@ -58,9 +58,15 @@ class Distribution_model extends CI_Model {
 		$this->db->update('reminder_candidate A',array('A.telemarketer'=>'0'));
 		return $this->db->affected_rows();
 	}	
+	function clear_noans_busy(){
+		$this->filter();
+		$this->db->where('A.status in(21,22)');
+		$this->db->update('reminder_candidate A',array('A.telemarketer'=>'0','A.valid'=>'0','A.audit'=>'0'));
+		return $this->db->affected_rows();
+	}	
 	function clear_callback(){
 		$this->filter();
-		$this->db->where('A.status in(21,22,15)');
+		$this->db->where('A.status in(15)');
 		$this->db->update('reminder_candidate A',array('A.telemarketer'=>'0','A.valid'=>'0','A.audit'=>'0'));
 		return $this->db->affected_rows();
 	}	
